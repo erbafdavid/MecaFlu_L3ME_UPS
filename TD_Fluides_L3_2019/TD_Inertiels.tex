@@ -1,0 +1,524 @@
+% !TEX root = TD_fluides_part2_2018.tex
+
+\setcounter{section}{6}
+
+%\section{Ecoulements Inertiels II : Ecoulements potentiels}
+
+
+\section{Ecoulements Inertiels I }
+
+
+\setcounter{subsection}{-1}
+
+
+\subsection{Vidange d'un réservoir}
+
+{\em Exercice préparatoire ; énoncé et correction détaillée sur moodle}
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Force exerc\'ee par un jet sur une plaque}
+%--------------------------------------------------------------------------------------------------
+
+\begin{figure}[hbtp]
+  \begin{center}
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(80, 60)(0, 0)
+      \put(10, 0){\includegraphics[width=6cm]{jet_impact.pdf}}
+      \put(20, 40){$P_a$}
+      \put(60, 40){$y$}
+      \put(65, 20){$x$}
+      \put(72, 30){$X$}
+      \put(20, 40){$P_a$}
+      \put(0, 27){$\vec{V}, \, q_m$}
+      \put(50, 60){$\vec{V}', \, q_m'$}
+      \put(10, 0){$\vec{V}'', \, q_m''$}
+    \end{picture}
+  \end{center}
+  \mycaption{Jet plan impactant sur une plaque inclin\'ee.}
+  \label{fig:jet_impact}
+\end{figure}
+
+Un jet d'eau bidimensionnel s'\'ecoulant \`a vitesse $\vec{V}$ (d\'ebit $q_m$) impacte 
+une plaque plane inclin\'ee d'un angle $\alpha$ par rapport \`a
+l'horizontale $X$ (fig.~\ref{fig:jet_impact}). 
+On veut d\'eterminer la force exerc\'ee par le jet sur la plaque.
+On note $q_m'$ et $q_m''$ les d\'ebits correspondant aux vitesses
+$\vec{V}\,'$ et $\vec{V}\,''$ de l'\'ecoulement de part et d'autre
+de l'impact.
+On supposera les effets visqueux n\'egligeables, ainsi que l'effet de la pesanteur.
+\begin{enumerate}
+\item 
+  Montrer que $V = V' = V''$.
+\item 
+  Exprimer la conservation du d\'ebit massique.
+\item 
+  D\'eterminer la force $\vec{F}$ exerc\'ee par les fluides sur la plaque.
+  On exprimera les composantes $F_x$, $F_y$ et $F_X$.
+\item 
+  Calculer $q_m'$ et $q_m''$ en fonction de $q_m$ et $\alpha$.
+\item 
+  A quelles conditions les effets visqueux sont-ils effectivement n\'egligeables ?
+\end{enumerate}
+
+
+
+
+\subsection{Tube de pitot}
+
+
+\begin{figure}[htb]
+  \begin{center}
+      \includegraphics[width=.7\linewidth]{Pitot.pdf}
+      \end{center}
+      \vspace{-1cm}
+\end{figure}
+
+{\em Exercice complémentaire ; Correction disponible sur l'espace Moodle du cours de Mécanique des fluides de L2 (TD6, exercice 9)}.
+
+Pour mesurer la vitesse $U_0$ de vehicules se déplaçant à grande vitesse dans l'air (masse volumique de l’air $\rho_a = 1.225kg/m^3$ ),  on utilise généralement des sondes de Pitot. Dans le manomètre en U du tube de Pitot, on utilise un liquide de masse volumique connue, de l'eau par exemple ($\rho_e = 1000kg.m^3$). On prendra $g = 9.81 m/s^2$.
+
+La dénivellation indiquée dans le manomètre en U étant $h =10 cm$ , calculer la vitesse $U_0$.
+
+
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Ventilation d'un tunnel (d'apr\`es examen 2008)}
+%--------------------------------------------------------------------------------------------------
+
+On consid\`ere un tunnel horizontal de section $S$ uniforme, ventil\'e par un soufflage d'air 
+frais comme indiqu\'e sur la figure~\ref{fig:tunnel}. 
+L'air souffl\'e \`a la vitesse $U_s$ dans un conduit de section $s$ se m\'elange \`a l'air 
+du tunnel entre les sections 1 et 2. 
+Dans la partie amont du tunnel (partie gauche), le soufflage peut induire un \'ecoulement 
+vers la droite comme sur la figure, ou vers la gauche. On veut d\'eterminer les conditions 
+r\'ealisant l'un ou l'autre \'ecoulement. 
+Dans tout le probl\`eme, on n\'egligera les effets visqueux, et on consid\`erera l'\'ecoulement
+isovolume, stationnaire, et uniforme dans toute section du tunnel, sauf entre les sections 1 et 2.
+
+\begin{figure}[hbt]
+  \begin{center}
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(150, 40)(0, 5)
+      \put(0, 0){\includegraphics[width=15cm]{tunnel_ventile.png}}
+      \put(0, 37){$p_a$} %, u = 0
+      \put(145, 20){$p_a$}
+      \put(65, 23){$s$}
+      \put(50, 8){$S$}
+      \put(78, 26){$\alpha$}
+      \put(85, 12){$U_s$}
+      \put(62, 11){$U_1$}
+      \put(99, 11){$U_2$}
+    \end{picture}
+  \end{center}
+  \mycaption{Sch\'ema du tunnel ventil\'e.}
+  \label{fig:tunnel}
+\end{figure}
+
+\begin{enumerate}
+
+\item 
+  On consid\`ere que l'\'ecoulement correspond \`a la figure : 
+  au voisinage de l'entr\'ee du tunnel, l'air atmosph\'erique est acc\'el\'er\'e progressivement, 
+  alors qu'il sort du tunnel sous la forme d'un jet.
+  \begin{enumerate}
+  \item 
+    Ecrire la relation de Bernoulli pour une ligne de courant entre l'ext\'erieur du tunnel 
+    (infini amont) et la section 1.
+  \item 
+    Quelle est la pression de l'air \`a la sortie du tunnel~? 
+    En d\'eduire, en utilisant la relation de Bernoulli, la pression dans la section 2.
+  \item 
+    Appliquer le bilan int\'egral de quantit\'e de mouvement pour 
+    le volume de contr\^ole limit\'e par les parois du tunnel, les sections 1 et 2 et 
+    la section de soufflage, d'aire $s/\sin \alpha$ o\`u $\alpha$ est l'angle du conduit 
+    de soufflage avec l'axe du tunnel. 
+    On consid\`erera l'angle $\alpha$ petit, soit $\cos \alpha \approx 1$.
+  \item 
+    Ecrire la relation liant $U_s$, $U_1$ et $U_2$, issue de la conservation de la masse.
+  \item 
+    D\'eduire des \'equations \'etablies ci-dessus la relation quadratique donnant 
+    la vitesse normalis\'ee $u = U_1/U_s$ en fonction du rapport des sections $r = s/S$. 
+  \item 
+    Montrer qu'il n'existe de solution correspondant \`a la figure que si le rapport des 
+    sections $r$ est inf\'erieur \`a une valeur critique que l'on pr\'ecisera.
+  \item 
+    Tracer l'\'evolution de $u$ en fonction de $r$, en pr\'ecisant les points remarquables 
+    de la courbe. On donnera en particulier la valeur de $r$ qui maximise l'entra\^{\i}nement 
+    d'air, et la valeur de ce maximum de $u$.
+  \end{enumerate}
+  
+\item 
+  Lorsque le rapport des sections exc\`ede la valeur critique d\'etermin\'ee ci-dessus, 
+  l'\'ecoulement dans la partie amont du tunnel s'inverse. 
+  Aux deux extr\'emit\'es du tunnel, l'air sort sous la forme d'un jet.
+  \begin{enumerate}
+  \item 
+    En proc\'edant de fa\c{c}on similaire \`a la question pr\'ec\'edente, 
+    d\'eterminer la vitesse normalis\'ee $u$ en fonction du rapport des sections $r$.
+  \item 
+    V\'erifier que la vitesse $u$, en tant que fonction de $r$, ne subit pas de discontinuit\'e 
+    entre les deux r\'egimes d'\'ecoulement.
+  \item 
+    Pour un tunnel de 6 m\`etres de diam\`etre et des vitesses d'\'ecoulement de l'ordre 
+    du m\`etre par seconde, le fait de n\'egliger les effets visqueux vous para\^{\i}t-il 
+    justifi\'e ?
+  \end{enumerate}
+  
+\end{enumerate}
+
+
+
+\subsection{Estimation de la traînée d'un cylindre (Exam mai 2017)}
+
+
+On étudie l'écoulement stationnaire autour d'un cylindre fixe de rayon $a$ et de longueur infinie dans la direction $z$ (écoulement bidimensionnel dans le plan $(x,y)$ ). 
+Le fluide est considéré comme un liquide incompressible de masse volumique $\rho$ constante et de viscosité $\nu$. On néglige l'effet de la pesanteur.
+On cherche a estimer la force 
+${\bf F} = F_x {\bf e_x} + F_y {\bf e_y} $ exercée par le fluide sur le cylindre a partir de bilans intégraux.
+
+%Loin du cylindre, l'écoulement est supposé uniforme, de direction $\myvec{e}_x$ et de valeur %$U_0$, et la pression est également uniforme et vaut $P_0$.
+
+
+\begin{figure}[htb]
+  \begin{center}
+      \includegraphics[width=.9\linewidth]{Cylindre_Bilan.png}
+      \end{center}
+      \vspace{-1cm}
+\end{figure}
+
+%La modélisation potentielle des deux parties précédentes ne permet pas de prédire la force de traînée, qui est due aux frottements visqueux à la surface du cylindre. Dans cette partie
+%on cherche à estimer cette force de traînée par un bilan intégral dans le cas non tournant ($\Omega = 0$),  a partir de la loi de vitesse observée dans le sillage du cylindre à une distance $L$ de celui-ci.
+
+%On cherche à estimer la force de traînée par un bilan intégral,  
+%a partir de la loi de vitesse observée dans le sillage du cylindre à une distance $L$ de celui-ci.
+ On considère pour cela un volume de contrôle correspondant à un domaine parallélépipédique 
+ de largeur $2b$, longueur $2L$, et profondeur $2H$ (dans la direction z).  Les champ de vitesse ${\bf u} = u {\bf e_x} + v {\bf e_y} $  et de pression sur les frontières de ce volume de contrôle sont indiqués sur la figure. %Les lois $v(x,\pm b)$ et $u(L,y)$ sont 
+ La troisième composante de vitesse $w$ est nulle sur toutes les frontières du domaine.
+ On suppose que les effets visqueux sont négligeables loin du cylindre (y compris sur les frontières du volume de contrôle).
+
+\begin{enumerate}
+
+\item Ecrire un bilan de masse sur le volume de contrôle, et en déduire une relation intégrale reliant $U_0$, $u(L,y)$, $v(x,-b)$ et $v(x,b)$.
+(ici et dans la question suivante on ne cherchera pas à calculer les intégrales apparaissant dans l'expression).
+
+
+\item Ecrire un bilan de quantité de mouvement (théorème d'Euler) projeté dans la direction $x$, et en déduire une expression de la traînée (composante $F_x$ de la force exercée) sur le cylindre en fonction du champ de vitesse sur les frontières du domaine.
+
+
+%\item Ecrire également un bilan de masse, et en déduire une relation intégrale reliant $u(L,y)$, 
+%$v(x,-b)$ et $v(x,b)$.
+
+\item En combinant les équations obtenues aux deux questions précédentes, montrez que la force de traînée peut être estimée par l'équation suivante :
+$
+F_x = 2 H \int_{-b}^{b} u(L,y) \left( U_0 - u(L,y) \right) dy 
+$
+
+
+\item
+Application. On suppose qu'en sortie le profil de vitesse peut être approximé par la loi suivante: 
+$$
+u(L,y) = \left\{ \begin{array}{ll} U_0 \quad & |y|> a \\ 0.7 U_0 \quad & |y|< a \end{array}
+\right.
+$$
+
+En déduire le coefficient de traînée $C_x = F_x / (\rho U_0^2 a H)$.
+
+
+\item A partir d'un bilan de quantité de mouvement projeté dans la direction $y$, donnez une expression de la portance (composante $F_y$ de la force exercée) en fonction de la vitesse sur les frontières du domaine. A quelle condition cette portance est-elle nulle ? interprétez physiquement.
+
+
+\end{enumerate}
+
+
+
+
+
+
+\comment{
+%--------------------------------------------------------------------------------------------------
+\subsection{Attirer en soufflant \exonormal}
+%--------------------------------------------------------------------------------------------------
+
+On consid\`ere deux disques parall\`eles, de diam\`etre $D$, s\'epar\'es d'une distance $d \ll D$ (fig.~\ref{fig:interdisques}). De l'air, amen\'e par un tube normal aux disques avec une vitesse $V_c$, p\'en\`etre au centre du disque sup\'erieur par une ouverture de diam\`etre $d \ll D$. Au-del\`a de la section d'entr\'ee, l'air s'\'ecoule radialement  pour d\'eboucher dans l'atmosph\`ere. On n\'eglige les effets visqueux. 
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=8cm]{interdisques}
+\end{center}
+\mycaption{Ecoulement inter disques.}
+\label{fig:interdisques}
+\end{figure}
+
+On notera $r$ la distance d'un point \`a l'axe $z$ des deux disques. Dans tout le probl\`eme, on admet que le module de la vitesse entre les deux disques ne d\'epend que de $r$ (sauf dans la zone $r<d/2$ o\`u les lignes de courant changent de direction). Dans la section de sortie $r=D/2$, la pression est \'egale \`a la pression atmosph\'erique $P_a$.
+
+\begin{enumerate}
+\item Calculer la vitesse $V(r)$ entre les deux disques pour $d/2<r<D/2$.
+Comparer avec $V_c$.
+\item Donner la valeur de la pression $P_c$ dans la conduite en fonction
+de $V_c$ et $P_a$.
+\item D\'eterminer la loi de pression $p(r)$ entre les deux disques pour $d/2<r<D/2$.
+Comparer avec $P_a$.
+\item Calculer la r\'esultante des forces subies par le disque sup\'erieur de la part
+des fluides qui l'entourent pour $d/2<r<D/2$.
+Y a-t'il r\'epulsion ou attraction~?
+\item On surestime la pression aux points du disque inf\'erieur $r<d/2$ 
+en la prenant \'egale \`a la pression en $0$.
+Reprendre la question pr\'ec\'edente dans le cadre de cette hypoth\`ese.
+\end{enumerate}
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Lance d'incendie (d'apr\`es examen 2005) \exonormal}
+%--------------------------------------------------------------------------------------------------
+
+La lutte contre les incendies hors zone urbaine et particuli\`erement en
+zone dite ``s\`eche'' b\'en\'eficie de l'aide d'appoint d'unit\'es mobiles
+transportant un syst\`eme autonome constitu\'e d'un r\'eservoir d'eau,
+d'une pompe et d'une lance \`a incendie embarqu\'es
+sur un v\'ehicule tout terrain.
+On s'int\'eresse dans ce probl\`eme \`a la description de certains aspects
+du fonctionnement de ce syst\`eme.
+
+L'eau est mise sous pression par un compresseur qui impose une pression
+en entr\'ee de lance de $P_1 = P_0 + \varphi$ o\`u $P_0 = 10^5$ Pa 
+d\'esigne la pression atmosph\'erique ambiante et $\varphi > 0$ la surpression,
+de l'ordre de quelques bars.
+La lance \`a incendie est reli\'ee au compresseur par un tuyau flexible,
+et est maintenue par un support orientable.
+Le diam\`etre d'entr\'ee de la lance est $D = 5$ cm, correspondant
+\`a une section $S_1$.
+La lance forme une conduite convergente, de section de sortie $S_0<S_1$. La surface lat\'erale de la lance est not\'ee $\Sigma$.
+
+On rappelle que la masse volumique de l'eau est $\rho = 10^3 \, \mbox{kg/m}^3$
+et sa viscosit\'e cin\'ematique $\nu = 10^{-6} \, \mbox{m}^2\mbox{/s}$.
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(110, 30)
+\put(0, 0){\includegraphics[width=10cm]{lance.pdf}}
+\put(100, 10){$\vec{e}_x$}
+\end{picture}
+\end{center}
+\mycaption{Mod\`ele de lance \`a incendie.}
+\label{fig:lance}
+\end{figure}
+
+\begin{enumerate}
+\item[]
+\item
+En supposant que l'ensemble reste globalement 
+\`a un m\^eme niveau horizontal pendant le fonctionnement
+de la lance, montrer que l'on peut n\'egliger l'influence de la pesanteur
+dans cette configuration.
+%\item[]
+\item[]
+Dans un premier temps, la lance d'incendie est ferm\'ee en $S_0$ :
+il n'y a donc pas \'ecoulement.
+\item
+Calculer la r\'esultante $\vec{F}_0$ des forces de pression 
+exerc\'ees sur la section
+$S_0$ par l'eau sous pression dans la lance et l'air \`a pression
+atmosph\'erique, en fonction de $\varphi$ et $S_0$.
+\item
+Calculer la r\'esultante $\vec{F}_1$ des forces de pression qui s'exercent
+cette fois-ci sur la totalit\'e de la paroi de la lance
+$S_0 \cup \Sigma$ en fonction de $\varphi$ et $S_1$.
+\\
+On pourra utiliser sans la red\'emontrer l'\'egalit\'e math\'ematique
+suivante :
+\[
+\int\!\!\!\int_{\partial \Omega} \vec{n} \, \mbox{dS} = \vec{0}
+\]
+o\`u $\partial \Omega$ d\'esigne une surface \textit{ferm\'ee} de normale
+sortante $\vec{n}$.
+\item
+En d\'eduire la force $\vec{R}$ 
+exerc\'ee par l'ensemble \{tuyau et support\} sur la lance.
+\item[]
+%\item[]
+On ouvre maintenant la lance en $S_0$ : un jet d'eau sort \`a vitesse $U_0$
+dans l'air \`a pression atmosph\'erique $P_0$.
+\item
+Calculer la vitesse $U_1$ en entr\'ee de la lance et
+la vitesse $U_0$ en sortie, en fonction de $\varphi$, $\rho$ et du rapport
+des section $\alpha = S_1/S_0 > 1$ (on admettra que la vitesse est uniforme dans toute section).
+\item
+Donner alors l'expression du nombre de Reynolds $Re$ en entr\'ee de la lance
+d'incendie en fonction en particulier de $\varphi$. \\
+Application num\'erique : calculer son ordre de grandeur pour un rapport
+de section $\alpha=2$ et un r\'egime de fonctionnement correspondant \`a
+$\varphi = 2P_0$.
+En d\'eduire la nature laminaire ou turbulente du r\'egime d'\'ecoulement
+dans la lance. L'hypoth\`ese de vitesse uniforme faite \`a la quesion pr\'ec\'edente est-elle justifi\'ee ?
+\item
+Donner l'expression du d\'ebit massique $\dot{m}$ puis du d\'ebit volumique $q$
+et calculer leur valeur dans le r\'egime de fonctionnement d\'ecrit dans
+la question pr\'ec\'edente.
+\item
+Donner l'expression de la r\'esultante $\vec{F}$
+des forces de pression exerc\'ees par les fluides (eau et air)
+sur la paroi $\Sigma$ de la lance, en fonction de $q$, $\rho$, $\alpha$
+et $S_1$.
+Dans quel sens s'exerce cette force~?
+\item
+Comparer cette force avec la force $\vec{R}$ exerc\'ee par le tuyau
+et le support dans le cas sans \'ecoulement (on pourra pour ce faire
+\'ecrire cette derni\`ere force en fonction de $q$, $\rho$, $\alpha$
+et $S_1$).
+Que pourrait-on en d\'eduire sur le mouvement de la lance au moment
+de la mise en \'ecoulement \`a l'ouverture de $S_0$~?
+\item
+En consid\'erant un bilan int\'egral de quantit\'e de mouvement pour l'ensemble
+du syst\`eme embarqu\'e, quelle est la force induite par le jet d'eau sur
+le v\'ehicule d'intervention~? 
+\end{enumerate}
+}
+
+
+\comment{
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Siphon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+\begin{tabular}{lp{1cm}r}
+\begin{minipage}{7cm}
+Un siphon permet l'\'ecoulement de l'eau d'un r\'eservoir
+de grandes dimensions.
+Il est constitu\'e d'un tuyau de diam\`etre constant qui s'\'el\`eve
+\`a une hauteur $H$ au-dessus du niveau de la surface libre.
+
+Calculer la valeur du d\'ebit maximum que l'on peut obtenir avec ce dispositif
+sans qu'il se produise de cavitation (pression quasi nulle en un point
+du siphon~: dans ce cas l'eau devient gazeuse et les bulles de gaz ainsi
+g\'en\'er\'ees, plus l\'eg\`eres que le liquide, viennent se loger
+en haut du siphon, provoquant un risque de d\'esamor\c{c}age).
+Quelle est alors l'altitude de la sortie du siphon ?
+\end{minipage}
+& &
+\begin{minipage}{7cm}
+\begin{center}
+%\input{Figures_FluidesL2/siphon.pstex_t}
+\end{center}
+\end{minipage}
+\end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{D\'ebit d'un barrage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Une vanne retient partiellement l'eau d'un barrage de grandes dimensions
+dans lequel la hauteur d'eau, fix\'ee, est $H$.
+Calculer la hauteur $h$ de sortie correspondant au d\'ebit maximum.
+
+\begin{figure}[hbt]
+\begin{center}
+%\input{Figures_FluidesL2/barrage.pstex_t} \hskip 2cm \input{../FIGURES/clepsydre.pstex_t}
+\end{center}
+\caption{(a) Barrage. (b) Clepsydre.} 
+\label{fig:baclep}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Clepsydre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+La clepsydre est une horloge \`a eau connue aussi bien des Egyptiens que des
+Am\'erindiens ou des Grecs.
+Si le cadran solaire donne l'heure pendant le jour, 
+la clepsydre fait la m\^eme chose la nuit, et elle mesure en plus
+des dur\'ees plus br\`eves avec une bonne pr\'ecision. 
+Un vase perc\'e d'un trou (section $S_0$) laisse couler de l'eau.
+Des graduations situ\'ees \`a l'int\'erieur permettent de mesurer des
+intervalles de temps.
+On souhaite d\'eterminer la forme du vase
+telle que la surface libre du liquide, d'aire $S(z)$, s'abaisse 
+proportionnellement au temps.
+\begin{enumerate}
+\item
+Calculer la vitesse d'\'ejection de l'eau en sortie ($z=0$).
+\item
+Donner la loi de variation de l'aire $S(z)$ de la clepsydre.
+\item
+Dans le cas o\`u le r\'eservoir est de section circulaire,
+en d\'eduire la loi de variation de $R(z)$.
+\end{enumerate}
+
+%\newpage
+
+%\setlength{\oddsidemargin}{-1cm}
+%\setlength{\evensidemargin}{-1cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ecoulements \`a surface libre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+\item
+Une nappe d'eau s'\'ecoule sur un sol qui pr\'esente une d\'enivellation $H>0$
+(bosse).
+En d\'esignant par $h_1$ et $V_1$ la hauteur d'eau et la vitesse \`a l'infini
+amont, montrer que $h_2 > h_1$ correspond \`a $V_1>\sqrt{gh_1}$
+(r\'egime torrentiel), et r\'eciproquement
+$h_2 < h_1$ si $V_1<\sqrt{gh_1}$ (r\'egime fluvial),
+o\`u $h_2$ est la hauteur d'eau \`a l'aplomb de la d\'enivellation.
+On notera $V_2$ la vitesse de l'\'ecoulement juste au-dessus de la
+d\'enivellation, et on supposera que l'\'ecoulement est uniforme dans chaque
+section.
+\item
+Reprendre l'exercice pr\'ec\'edent et retrouver les deux r\'egimes
+d'\'ecoulement en laissant le fond horizontal, mais en imposant une diminution
+de la section $e$ de passage par un r\'etr\'ecissement du canal
+(\'ecoulement entre les piles d'un pont par exemple).
+\end{enumerate}
+
+\begin{figure}[hbt]
+\begin{center}
+%\input{Figures_FluidesL2/torrent.pstex_t} \hskip 2cm \input{Figures_FluidesL2/pont.pstex_t}
+\end{center}
+\caption{Ecoulements \`a surface libre.}
+\label{fig:esl}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\subsection{Le diffuseur de parfum }
+
+
+%\input{Figures_FluidesL2/parfum.pstex_t}
+
+
+Le dispositif représenté sur la figure est utilisé pour diffuser du parfum.
+Un courrant d'air, de débit volumique $q$ constant, circule dans un conduit
+présentant un rétrécissement. Un tuyau, raccordé au récipient contenant le 
+parfum, est disposé au col. Si le débit d'air est suffisant, le parfum
+est aspiré dans le tuyau, et circule avec un débit volumique $q_l$.
+On suppose le débit volumique du parfum faible devant celui de l'air,
+de sorte que le débit volumique en sortie est $q+q_l \approx q$.
+
+On note $\rho_a$ et $\rho_l$ les masses volumiques de l'air et du liquide,
+$S$ et $S_c$ les sections en entrée et au col, et $\Delta h$ la hauteur entre
+la surface du liquide dans le récipient et la sortie du tuyau.
+
+1/ Montrez qu'un débit d'air minimal est nécessaire pour que le parfum
+soit diffusé.
+Lorsque le débit d'air est inférieur à cette valeur, donnez la hauteur atteinte
+dans le tube par le parfum.
+
+2/ Lorsque le débit d'air est supérieur à la valeur critique, calculez
+le débit volumique de parfum diffusé.
+
+3/ Représentez la fraction volumique de parfum, $q_l/q$, en fonction de $q$.
+
+
+
+Remarque : Un dispositif du même type est utilisé dans certains carburateurs
+(mais ca sent moins bon).
+
+}

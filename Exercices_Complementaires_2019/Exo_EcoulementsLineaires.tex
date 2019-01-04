@@ -1,0 +1,197 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt, a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--------------------------------------------------------------------------------------------------
+% Dimensions :
+%--------------------------------------------------------------------------------------------------
+
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{16cm}
+
+\setlength{\topmargin}{-20mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+
+% \setlength{\columnsep}{20mm}
+
+\setlength{\fboxsep}{1mm}
+\setlength{\unitlength}{1mm}
+
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[french]{babel}    % pour franciser le document
+
+%\usepackage[latin1]{inputenc} % pour utiliser les caracteres accentues du claviers
+\usepackage[utf8]{inputenc}
+
+%--------------------------------------------------------------------------------------------------
+% Divers :
+%--------------------------------------------------------------------------------------------------
+
+\definecolor{rougefonce}{rgb}{0.7, 0.2, 0.2}
+
+\usepackage{accents}
+
+\input{mymacros}
+
+\renewcommand{\thickline}[2]{\linethickness{#1} \line(1, 0){#2}}
+\renewcommand{\mycaption}[1]{\caption{\sl #1}}
+\renewcommand{\myvec}[1]{\vec{#1}}
+
+
+% \pagestyle{empty}
+
+\graphicspath{{Figures/}} % chemin d'acces au repertoire des figures (par ex.)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+
+  \textsc{Université Toulouse 3 -- Paul Sabatier \hfill Année universitaire 2017-2018}
+  
+  \textsc{Mécanique des fluides \hfill L3 Mécanique}
+  
+  \vspace{0mm}
+  
+  \begin{center}
+    \thickline{0.4mm}{160}
+    \\ \vspace{3mm}
+  \textbf{\large Ecoulements linéaires (exercice préparatoire chapitre cinématique)}
+    \\ %\vspace{1mm}
+    \thickline{0.4mm}{160}
+  \end{center}
+
+%  \vspace{0mm}
+  
+\end{center}
+
+%==================================================================================================
+\section{Introduction}
+%==================================================================================================
+
+\paragraph{Définition :\\}
+
+Considérons un écoulement plan $\myvec{u} = u(x, y, t) \, \ex + v(x, y, t) \, \ey$ 
+%et incompressible (ou isovolume), c'est-à-dire
+Défini par :
+\begin{eqnarray}
+u(x,y) &=& a x + by\\
+v(x,y) &=& cx+dy
+\end{eqnarray} 
+
+
+\paragraph{Propriétés :}
+
+\begin{enumerate}
+\item
+	A quelle condition cet écoulement est-il a divergence nulle ? (on dit aussi écoulement isovolume, ou par abus de language écoulement incompressible).
+\item
+	Justifiez que dans ce cas on peut introduire une fonction de courant $\psi(x,y)$, et donnez son expression.
+	
+	\item
+	Montrer que les lignes de courant de l'écoulement sont les courbes le long desquelles 
+	la fonction de courant est constante, définies par $\psi(x, y) = Cte$.
+\item
+	Question subsidiaire : montrer que le débit est conservé entre deux lignes de courants.
+	Plus préci\-sé\-ment, si l'on considère deux lignes de courant  définies 
+	par $\psi(x, y) = C_1$ et $\psi(x, y) = C_2$,
+	alors le débit qui passe entre ces deux lignes de courant est donné par $q=C_2-C_1$.
+\end{enumerate}
+
+%==================================================================================================
+\section{Ecoulements linéaires}
+%==================================================================================================
+
+On considère dans cet exercice les écoulements plans stationnaires définis par la fonction de courant 
+\begin{equation}
+	\psi(x, y) = -c x^{2}/2 + b y^{2}/2
+	\label{eq:linearflow}
+\end{equation}
+où $b$ et $c$ sont deux paramètres constants qui définissent la nature de l'écoulement considéré.
+
+\begin{enumerate}
+\item
+	Calculer en fonction de $b$ et $c$ le champ de vitesse correspondant à la fonction de courant donnée par l'expression (\ref{eq:linearflow}).
+\item
+	Vérifier à nouveau qu'il s'agit bien d'un écoulement incompressible.
+\item
+	Déterminer la dérivée particulaire du champ de vitesse obtenu.
+	Comment est modifiée cette dérivée particulaire si on considère des coefficients dépendants
+	du temps $c(t)$ et $b(t)$ ?
+\item
+	Donner l'expression du tenseur des gradients de vitesse $\mytensor{G}$. 
+	On justifiera qu'on pourra se restreindre à un tenseur représenté par une matrice $2\times2$.
+\item
+	Justifier alors l'appellation d'écoulement \textsl{linéaire} associée à cette famille 
+	particulière de fonction de courant.
+\item
+	Déterminer le tenseur des taux de déformation $\mytensor{D}$. A quelle condition ce tenseur est nul ?
+\item
+	Déterminer le tenseur des taux de rotation $\mytensor{R}$. A quelle condition ce tenseur est nul ?
+\item
+	Déduire des deux dernières questions une décomposition canonique de la fonction de courant $\psi$.
+\item
+	Calculer le vecteur tourbillon $\myvec{\varOmega}$
+	et le champ de vorticité $\myvec{\omega}$ de l'écoulement.
+
+\item On effectue maintenant un changement de repère en faisant tourner les axes d'un angle $\theta$. On pose donc  : 
+
+$x' = x \cos \theta + y \sin \theta$ ;  $y' = -x \sin \theta + y \cos \theta$ ;
+$u_x' = u_x \cos \theta + u_y \sin \theta$ ;  $u_y' = -u_x \sin \theta + u_y \cos \theta$.
+
+Calculez le tenseur du gradient des vitesses, ainsi que ses composantes symétrique et antisymétrique, dans ces nouveaux axes  
+(on notera $\mytensor{G}_{(x'y')} =\mytensor{D}_{(x'y')} + \mytensor{R}_{(x'y')}$).
+
+\item Que remarque-t-on pour la partie antisymétrique (tenseur des taux de rotation) ?
+
+\item Pour la partie symétrique (tenseur des taux de déformation), montrez qu'il existe un changement de variable rendant le tenseur diagonal. Interprétez.
+
+
+\end{enumerate}
+
+%==================================================================================================
+\section{Ecoulements linéaires : cas particuliers}
+%==================================================================================================
+
+\begin{enumerate}
+
+\item
+	Ecrire un programme Matlab qui trace les lignes de courant 
+	pour n'importe quelle valeur de $c$ et $b$ choisies par l'utilisateur.
+
+\item
+	On considère le cas particulier $c=0$.
+	\begin{enumerate}
+	\item 
+  		déterminer les lignes de courant et les trajectoires (on vérifiera qu'il s'agit 
+  		des mêmes courbes),
+	\item 
+  		déterminer l'accélération des particules fluides.
+	\item 
+  		commenter la forme des tenseurs des taux de déformation et des taux de rotation dans ce cas.
+	\end{enumerate}
+\item
+	Mêmes questions dans le cas $c/b=1$ (on pourra éventuellement prendre $b=1$ sans perte de généralité).
+	Tracer les lignes de courant avec Matlab et l'accélération des particules fluides en quelques points particuliers.
+\item
+	Mêmes questions dans le cas $c/b=-1$.
+\item
+	Question subsidiaire : reprendre le programme Matlab précédent afin qu'il
+	calcule l'évolution d'un élément matériel carré initialement centré en un point $(x_0, y_0)$ 
+	et de côté $L$ choisis par l'utilisateur.	
+	
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

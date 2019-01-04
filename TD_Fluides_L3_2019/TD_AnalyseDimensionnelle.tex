@@ -1,0 +1,352 @@
+% !TEX root = TD_fluides_part1.tex
+
+
+%==================================================================================================
+\section{Analyse dimensionnelle et similitude}
+%==================================================================================================
+
+\subsection{Force de résistance à l'avancement d'un bateau de pêche}
+
+%\section{Résistance à l'avancement d'un pétrolier}
+
+On cherche à déterminer la résistance à l'avancement d'un petit bateau de pêche naviguant dans de l'eau de mer à la vitesse nominale $U = 6 m/s$
+La longueur du navire est de $L = 10 m$, et sa surface mouillée est de $S = 37,64 m^2$. 
+
+%La masse volumique de l'eau vaut $\rho = 1026 kg/m^3$ pour le navire. La viscosité cinématique de l'eau est $\nu = 1.188 10^{-6} m /s^2$.
+
+\subsubsection{Analyse dimensionnelle}
+
+\begin{enumerate}
+
+\item Listez tous les paramètres physiques pertinents et indépendants ayant une influence sur la force de résistance.
+
+\item En déduire que la résistance à l'avancement peut se mettre sous la forme suivante :
+
+$$ 
+R_T = \frac{1}{2} \rho S U^2 \cdot  C_T \left( \frac{U L}{\nu} , \frac{U}{\sqrt{gL}} \right) 
+$$  
+
+\item Quels nombres adimensionnels classiques reconnaissez-vous là ? quelle est leur interprétation ?
+
+\item Calculez la valeur de ces deux nombres dans le cas du bateau de pêche en condition réelles.
+
+\rep{ Réponse : $Fr = 0.4$, $Re = 3.54e 7$}  
+
+
+\subsubsection{Etude de similitude}
+
+On cherche à déterminer la traînée à l'aide d'une expérience en bassin de traction (dans l'eau douce), à l'aide d'une maquette à l'échelle 1/10ème.
+
+\item Est-il possible de faire une expérience en similitude totale (nombres de Froude et de Reynolds identiques dans l'expérience et le navire réel) ? 
+
+\item Quelle doit être la vitesse $U_m$ de la maquette si l'on souhaite respecter la similitude de Reynolds ? Que vaut alors le nombre de Froude de l'expérience ? ce cas vous semble-t-il réaliste ?
+
+\item Quelle doit être la vitesse $U_m$ de la maquette si l'on souhaite respecter la similitude de Froude ? Que vaut alors le nombre de Reynolds $Re_m$ de l'expérience ?
+
+\rep{ $U_m = 1.26 m/s$ ; $Re_m = 1.072e6$. } 
+
+\subsubsection{Similitude partielle sous l'hypothèse de Froude} 
+
+ Lorsque $Re \gg 10^{5}$ et $Fr \le 0.4$, l'expérience montre que l'on peut faire l'hypothèse de Froude, qui consiste à supposer que la  résistance à l'avancement se décompose en deux parties données par les expressions suivantes :
+
+$$
+C_T(Re, Fr) = C_{f,0}(Re) + C_{w}(Fr) 
+$$ 
+
+où $C_v$ est le coefficient de traînée visqueuse, estimé par la loi empirique de Hugues :
+$$
+C_v(Re) = \frac{0.074}{\left( \log_{10} Re - 2 \right)^2}
+$$
+
+et $C_{w}(Fr)$ est la traînée de vagues, qui peut être mesuré en effectuant une expérience en similitude de Froude.
+
+\item  Pour une vitesse d'avance de la maquette correspondant à celle calculée à la question 7, on mesure sur la maquette une résistance à l'avancement 
+$C_{T,m}  = 1.267 N$. 
+
+En déduire la traînée totale exercée sur le navire réel $C_T$, puis la puissance qui doit être fournie par le moteur du bateau.
+
+\rep{Rep : le coefficient de traïnée de la maquette vaut $C_{T,m} = 0.051$. En retranchant la partie visqueuse donnée par la loi de Hugues on déduit $C_w =  0.003$. 
+Donc le coefficient de traïnée du navire réel vaut $C_T = 0.003 + C_v(Re) = 0.0043$, et la traïnée totale vaut 
+$R_T = 1329 N$.
+La puissance correspondante vaut $R_T U = 5173 W= 7.23$ chevaux-vapeur. 
+}
+
+
+\end{enumerate}
+
+
+
+\subsection{Force de traînée sur une automobile}
+
+On cherche à estimer la force de traînée $D$ s'exerçant sur une automobile de longueur $L$ et surface frontale $S$ roulant à la vitesse $V$, à l'aide d'une expérience utilisant une maquette à échelle réduite dans un tunnel hydrodynamique.
+
+\begin{enumerate}
+\item Listez et discutez les paramètres physiques pertinents et indépendants dans ce problème.  
+
+%{\em Réponse : $g$ n'est pas pertinent (contribue (faiblement) à la force verticale via la poussée d'Archimède mais pas à la force horizontale), $p_{atm}$ non plus (incompressible car faible Mach), 
+%$S$ non plus (proportionnel à $L^2$ pour une géométrie de voiture donnée).
+ %Donc $ D= { \cal F} ( V, L, \rho, \nu)$.
+%}
+
+\item En utilisant les principes de l'analyse dimensionnelle, montrez que la traînée s'exprime simplement sous la forme suivante :
+
+$$ 
+D = \rho S V^2 C_x( Re),  \quad \mbox{ avec } Re = \frac{V L}{\nu}
+$$
+
+%{\em Réponse : l'analyse dimensionnelle donne $D/(\rho L^2 V^2) = f(V L/\nu)$, par convention on préfère utiliser la surface de référence $S$ (proportionnelle à $L^2$ pour une géométrie donnée).}
+
+
+\item Calculez la valeur du nombre de Reynolds, pour une automobile de longueur $L = 4m$ (et surface frontale $S = 1.74 m^2$), roulant à la vitesse $V= 90 km/h$. 
+
+%{\em Réponse : $Re = 1.66 \cdot 10^6$.}
+
+\item Dans l'expérience, la maquette est à l'échelle 1/10 (c.a.d. $L_m = L/10$). La vitesse de l'eau dans le tunnel hydrodynamique est notée $V_m$.
+
+Quelle doit être la valeur de $V_m$ pour assurer la similitude de Reynolds ?
+
+%{\em Réponse : $Re = Re_m$ donc $V_m = \nu_m /L_m Re = 16,6 m/s$}
+
+\item 
+Le tunnel hydrodynamique étant réglé à la vitesse $V_m$ précédemment déterminée, 
+on mesure à l'aide d'une balance de forces une traînée sur la maquette $D_m = 911 N$.
+En déduire le $C_x$, puis la traînée $D$ sur la voiture.
+
+%{\em Réponse : $C_x = 0.38$ ; $D = 260 N$.}
+
+\item En déduire la puissance dissipée par les forces aérodynamiques, puis la puissance qui doit être fournie par le moteur, en supposant que le rendement énergétique global de celui-ci est $\eta = 20 \%$.
+
+%{\em Réponse : $DV = 6.5 kW ; \cal{P} = 65 kW = 87 hp$. ($1 hp$ = 1 cheval-vapeur = $746 W$; unité différente du cheval-fiscal apparaissant sur la carte grise !)
+%}
+
+\end{enumerate}
+ 
+ 
+%{\em Remarque : je ne donne pas les valeurs de la masse volumique et viscosité de l'air et de l'eau, c'est intentionnel, normalement ils devraient les connaitre...}
+
+
+
+%\subsection{Traînée d'un bateau}
+
+
+\subsection{Vitesse d'un animal volant}
+
+On cherche à estimer la vitesse $V$ d'un animal volant (insecte, oiseau ou chauve-souris) en fonction de sa masse $M$.
+
+
+%\subsubsection{Analyse dimensionnelle}
+
+
+\begin{enumerate}
+
+\item 
+
+Listez les différents paramètres physiques intervenant dans le problème, et discutez leur pertinence. Montrez qu'il est légitime de supposer que la vitesse est donnée par une loi de la forme 
+
+$$
+V = {\cal F}(M,L,\rho,g,\nu).
+$$
+
+où $\rho$ est la masse volumique de l'air, $g$ l'accélération de la gravité,
+$L$ l'envergure de l'oiseau, $M$ sa masse et $\nu$ la viscosité cinématique de l'air.
+
+
+%\item Commentez l'hypothèse faite ci-dessus ; quels paramètres physiques 
+%n'ont pas été pris en compte et comment justifiez-vous leur omission ?
+
+\item Donnez les dimensions physiques de $V$, $\rho$, $\nu$, $g$, $L$ et $M$.
+
+\item En appliquant les principes de l'analyse dimensionnelle, montrez
+que la loi de vitesse peut se mettre sous la forme :
+
+$$
+V = \sqrt{gL} \,\, {\cal F} \left(\frac{M}{\rho L^3},\frac{\nu}{\sqrt{g L^3}}\right).
+$$
+
+ \item Interprétez physiquement la quantité $M/ (\rho L^3)$. Justifiez pourquoi
+on peut supposer en première approximation que cette quantité a la même valeur
+pour tous les animaux volants.
+ 
+\item Quelle est l'interprétation physique du nombre sans dimensions $Ga= \frac{\sqrt{g L^3}}{\nu}$ (parfois appelé nombre de Galilée) ?
+
+\item 
+Des considérations aérodynamiques permettent de montrer que dans la gamme
+$Ga > 10^3$ la structure de l'écoulement est indépendante de la viscosité. Estimez le nombre de Galilée pour les différents animaux volants du tableau ci-dessous.  
+
+
+
+\item En déduire que  la vitesse d'un animal volant est proportionnel à
+$M^{1/6}$.
+
+
+\item Application : calculez le rapport $V/M^{1/6}$ pour les différents animaux
+détaillés dans le tableau ci-dessous. Commentez les résultats
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline 
+Animal  & Poids & Vitesse & $V/M^{1/6}$ \\
+\hline 
+Guêpe & $100 mg$ & $20 km/h$ & \\
+Colibri & $2.5 g$ & $45 km/h$ & \\
+Hirondelle & $17g$ & $60 km/h$ & \\
+Aigle & $6kg$ & $160 km/h$ & \\ 
+Airbus A300 & $150 T$ & $855 km/h$ & \\
+\hline
+\end{tabular}
+\end{center}
+
+\item En se basant sur l'analyse précédente, à combien estimez vous la vitesse d'une mouette de masse $400g$ ?
+
+ \comment{
+\subsubsection{Etude aérodynamique$^*$}
+
+On souhaite retrouver la loi trouvée ci-dessus à partir des équations de l'aérodynamique. On suppose que l'animal a une aile de surface $S$ et vole à l'horizontale.
+
+\item A partir de l'équation de la portance, exprimez la vitesse $V$ 
+en fonction de $\rho$, $S$, $m$ et $g$ et $C_L$.
+
+\item Justifiez pourquoi le coefficient $C_L$ est à peu près le même pour
+tous les animaux volants.
+
+\item Justifiez pourquoi la surface $S$ est proportionnelle à $M^{2/3}$
+
+\item Retrouvez la loi d'échelle donnant vitesse en fonction de la masse
+trouvée à la partie précédente.
+}
+
+\end{enumerate}
+
+
+
+\comment{
+\subsection{Avion et maquette$^*$}
+
+
+\subsubsection{Avion en vol}
+
+On considère un avion de transport, d'envergure 40 $m$, de longueur 45 $m$, 
+de surface de voilure de 260 $m^2$. On suppose qu'il vole à 10 800 $m$ d'altitude à un nombre
+de Mach $M_1 = 0.75$.  
+
+Pour l'air on prend les caract\'eristiques suivantes :
+  $r = 287.04$ et $\gamma= 1.4$ et 
+  
+\begin{center}
+\begin{tabular}{c |cccc}
+  $H$ en m     &  $T$ en   $^\circ K$    & $P$ en $kPa$   &  $\nu$ en $m^2/s$
+  \\ \hline  
+ 10 800       & 218.08    & 23.422     &    $3.8202 \ 10^{-5}$\\
+ 1 800       & 276.46    & 81.494     &     $1.6869 \ 10^{-5}$
+ \end{tabular}
+\end{center} 
+ 
+
+ \begin{enumerate}
+ \item Calculer la masse volumique de l'air $\rho_1$, la vitesse du son $a_1$, 
+ en déduire la vitesse de l'avion.
+ \item Calculer la corde moyenne de l'aile $\ell_1$ et en déduire
+ le nombre de Reynolds correspondant. Calculer le nombre de Reynolds $Re_ {L1}$
+ basé sur la longueur de l'avion.
+ \item Donner l'ordre de grandeur de l'épaisseur de la couche limite sur l'aile 
+ à une distance $x_1= 4 \ m$ du  bord d'attaque. 
+ 
+ \item Reprendre les questions précédentes à l'altitude de  1 800 $m$, pour le
+ nombre de Mach de $M_1=0.4$.
+ 
+ \item Conclusion
+ \end{enumerate} 
+ 
+ 
+ 
+\subsubsection{   Maquette de l'avion  au 1/10 ème}
+ 
+   \begin{enumerate}
+   \item Donner les grandeurs suivantes $\ell_2$, $L_2$, $S_2$.
+    On teste la maquette dans une soufflerie reproduisant une atmosphère
+   à $H=10800 \ \  m$. 
+   
+    \item On cherche une similitude sur le nombre de Reynolds, en déduire la vitesse
+   que doit avoir l'air dans la soufflerie. Quelle est alors la valeur du nombre
+   de Mach ? En tirer des conséquences sur l'aérodynamique.
+   
+   \item  On cherche une similitude sur le nombre de Mach, qu'elle est alors
+   la valeur du nombre de Reynolds ? En tirer des conséquences sur l'aérodynamique.
+   \end{enumerate}
+ 
+ 
+ 
+ \subsubsection {   Force de portance}
+ Dans les 2 cas précédents,  en déduire la valeur
+ de la force de portance $L$, en sachant que le $C_L$ considéré est de $0.175$.
+ Conclusions. 
+ }
+
+%
+%\subsection{Analyse de similitude d'un moteur d'avion à hélice$^*$}
+%
+%
+%On cherche des relations simples, fonctions de nombres sans dimension
+%caractéristiques, qui donnent la force de traction $T$ de l'hélice, 
+%le couple $Q$ exerçé par l'hélice sur l'arbre moteur
+%et la puissance résistante $P_h$ de l'air sur l'hélice. 
+%
+%
+%\begin{enumerate}
+%
+%\item
+%Donner les dimensions et les unités de la force $T$, du diamètre de
+%l'hélice $D$, de la fréquence de rotation $n$,
+%de la masse volumique $\rho$, de la viscosité cinématique $\nu$, de la vitesse
+%de l'avion $V_0$, et de la pression $p$
+%
+%
+%\item En utilisant l'analyse dimensionnelle, montrer que la force de traction
+%peut être mise sous la forme suivante :
+%
+%
+%$$
+%T =  \rho n^2 D^4 k_T(Re,M,J) ,
+%$$
+%
+%où $Re = V_0 D / \nu$, $M = V_0/c$ avec $c = \sqrt{\gamma P/\rho}$, et 
+%$J = V_0 /nD$.
+%
+%
+%\item Interprétez physiquement les paramètres $Re,M$ et $J$.
+%
+%
+%\item Trouver une relation simple du même type avec un coefficient $k_Q$ pour le
+%couple $Q$.
+%
+%\item Ecrire la  puissance sur l'arbre de l'hélice  $P_h$  en fonction
+%d'un paramètre sans dimension $C_P$.
+%\item La puissance   utile pour la propulsion est 
+%$P_u= T V_0$. Calculer le rendement propulsif $\eta_p$  en fonction de nombres sans dimension.
+%
+%\item Une hélice de diamètre $D=3.4 m$ a les caractéristiques détaillées dans
+%la figure 3.
+%
+%%\begin{center}
+%%\begin{tabular}{|c|cccc|}
+%%$J$  &  1.06   & 1.19  & 1.34  &  1.44 \\
+%%\hline $k_Q$ & 0.0410  & 0.04  & 0.0378  & 0.0355\\
+%%\hline $\eta_p$ &  0.76  & 0.80 & 0.84  & 0.86
+%%\end{tabular} 
+%%\end{center}
+%Déterminer la vitesse de l'avion $V_0$ qui lui permet d'absorber une puissance
+%de 750 $kW$ à $n=1250  tr/mn$ et à 3660 m d'altitude ($\rho/\rho_0=0.639$) et
+%donner la force de propulsion $T$. Pour le calcul numérique $n$ doit être en $tr/s$.
+%
+%Comparer le rendement de cette hélice à celle d'un propulseur idéal, de même
+%surface, et donnant la même propulsion dans les mêmes conditions.
+% 
+%\end{enumerate}
+%  
+%   \begin{figure}
+%   $$
+%  \includegraphics[width = 8cm]{./courbepropulseur.eps}
+%  $$
+%\caption{   Figure 1 :  Abscisse : $J$, trait continu : $20 \times k_Q$, trait pointillé : $\eta_p$ }
+%  \end{figure}
+%
+

@@ -1,0 +1,231 @@
+
+% Style des vecteurs : fleche ou gras ?
+
+%\newcommand{\myvec}[1]{\boldsymbol{#1}}
+\newcommand{\myvec}[1]{\vec{#1}}
+
+\newcommand{\mytensor}[1]{\accentset{\Rightarrow}{#1}} % needs \usepackage{accents}
+
+%---------------------------
+% Operateurs differentiels :
+%---------------------------
+
+\newcommand{\divergence}{\mbox{\rm div}\,}
+
+\newcommand{\gradient}{\myvec{\mbox{\rm gra}}\mbox{\rm d}}
+% \newcommand{\gradient}{\mathbf{grad}\,}
+% \newcommand{\ggradient}{\stackrel{\Rightarrow}{\mbox{gra}}\!\!\!\,\mbox{d}\,}
+\newcommand{\ggradient}{\accentset{\Rightarrow}{\mbox{\rm gra}}\mbox{\rm d}\!}
+
+%\renewcommand{\dot}[1]{\accentset{\hbox{\huge .}}{#1}}
+\newcommand{\mydot}[1]{\accentset{\centerdot}{#1}}
+
+\newcommand{\rot}{\vec{\mbox{\rm ro}}\mbox{\rm t}\,}
+%\newcommand{\rot}{\mathbf{rot}\,}
+
+% \newcommand{\vnabla}{\vec{\nabla}}
+\newcommand{\vnabla}{\boldsymbol{\nabla}}
+
+% Fonctions speciales:
+
+\newcommand{\besselj}[1]{\mbox{J}_{#1}}
+\newcommand{\besselk}[1]{\mbox{K}_{#1}}
+\newcommand{\bessely}[1]{\mbox{Y}_{#1}}
+\newcommand{\besseli}[1]{\mbox{I}_{#1}}
+
+% Vecteurs, tenseurs et torseurs:
+
+\newcommand{\ex}{\myvec{e}_{x}}
+\newcommand{\ey}{\myvec{e}_{y}}
+\newcommand{\ez}{\myvec{e}_{z}}
+
+\newcommand{\er}{\myvec{e}_{r}}
+\newcommand{\erho}{\myvec{e}_{\rho}}
+\newcommand{\ephi}{\myvec{e}_{\varphi}}
+\newcommand{\etheta}{\myvec{e}_{\theta}}
+
+%\newcommand{\tensor}[1]{\stackrel{\Rightarrow}{#1}}
+\newcommand{\tensor}[1]{\mbox{\sl \textbf{#1}}}
+\newcommand{\torseur}[4]{
+   \!\!\!\! \left . \begin{array}{c} \\ \\ _#1 \end{array} \!\!\!
+   \right \{ \!\!\!
+   \begin{array}{#4} #2 \\ \\ #3 \end{array}}
+
+% Integrales multiples:
+
+\newcommand{\odblint}[1]{\int\!\!\!\!\!\int_{#1} \hskip -7mm \bigcirc \;}
+\newcommand{\dblint}{\int\!\!\!\!\!\int}
+\newcommand{\tplint}{\int\!\!\!\!\!\int\!\!\!\!\!\int}
+
+% Fractions:
+
+\renewcommand{\dfrac}[2]{\displaystyle \frac{#1}{#2}}
+
+% Derivees ordinaires et partielles:
+
+\newcommand{\dpdt}[1]{\dfrac{\partial #1}{\partial t}}
+\newcommand{\dpdx}[1]{\dfrac{\partial #1}{\partial x}}
+\newcommand{\dpdy}[1]{\dfrac{\partial #1}{\partial y}}
+\newcommand{\dpdz}[1]{\dfrac{\partial #1}{\partial z}}
+
+\newcommand{\ddpdt}[1]{\dfrac{\partial^2 #1}{\partial t^2}}
+\newcommand{\ddpdx}[1]{\dfrac{\partial^2 #1}{\partial x^2}}
+\newcommand{\ddpdy}[1]{\dfrac{\partial^2 #1}{\partial y^2}}
+\newcommand{\ddpdz}[1]{\dfrac{\partial^2 #1}{\partial z^2}}
+
+\newcommand{\dpdr}[1]{\dfrac{\partial #1}{\partial r}}
+\newcommand{\dpdrho}[1]{\dfrac{\partial #1}{\partial \rho}}
+\newcommand{\dpdphi}[1]{\dfrac{\partial #1}{\partial \varphi}}
+\newcommand{\dpdtheta}[1]{\dfrac{\partial #1}{\partial \theta}}
+
+\newcommand{\ddpdr}[1]{\dfrac{\partial^2 #1}{\partial r^2}}
+\newcommand{\ddpdrho}[1]{\dfrac{\partial^2 #1}{\partial \rho^2}}
+\newcommand{\ddpdphi}[1]{\dfrac{\partial^2 #1}{\partial \varphi^2}}
+\newcommand{\ddpdtheta}[1]{\dfrac{\partial ^2#1}{\partial \theta^2}}
+
+\newcommand{\ddt}[1]{\dfrac{d #1}{dt}}
+\newcommand{\ddx}[1]{\dfrac{d #1}{dx}}
+\newcommand{\ddy}[1]{\dfrac{d #1}{dy}}
+\newcommand{\ddz}[1]{\dfrac{d #1}{dz}}
+\newcommand{\ddr}[1]{\dfrac{d #1}{dr}}
+
+\newcommand{\ddtref}[2]{\dfrac{d #1}{dt}_{\! | #2 }}
+\newcommand{\dpdtref}[3]{\dfrac{\partial #1}{\partial #2}_{\! | #3 }}
+
+% Misc:
+
+\newcommand{\bareme}[1]{\reversemarginpar \marginpar{%
+	\hspace{8mm} \small \makebox[5mm]{/#1}% 
+	\begin{picture}(0, 0)\put(0, 0.5){\makebox[12mm]{\dotfill}}\end{picture}%
+	}}
+
+\newcommand{\mycaption}[1]{\caption{\sl #1}}
+
+\newcommand{\ligne}[1]{\hrule height #1\linethickness \hfill}
+
+\newcommand{\thickline}[2]{\linethickness{#1} \line(1, 0){#2}}
+
+\newcommand{\myline}{\noindent\underline{\hspace{\textwidth}}}
+\newcommand{\mysection}[1]{\vskip 0.5cm \section{#1}\vskip -1.4cm 
+   \myline \vskip 0.4cm \myline \bigskip}
+
+\newcommand{\etal}{\textit{et al.}}
+
+\newcommand{\varray}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\puissance}[1]{^{\mbox{\footnotesize #1}}}
+\newcommand{\indice}[1]{_{\mbox{\footnotesize #1}}}
+
+%---------------------------------------------------------------------
+% New environments:
+%---------------------------------------------------------------------
+
+\newcounter{MyEnumCounter}
+\newcounter{MySaveCounter}
+\newenvironment{MyEnum}{%
+  \begin{list}{\arabic{MyEnumCounter}.}{\usecounter{MyEnumCounter}%
+  \setcounter{MyEnumCounter}{\value{MySaveCounter}}}
+  }{%
+  \setcounter{MySaveCounter}{\value{MyEnumCounter}}\end{list}%
+}
+\newcommand{\MyEnumReset}{\setcounter{MySaveCounter}{0}}
+
+\newenvironment{deuxcols}{\begin{tabular}{lr} \hspace*{-9.7mm}}{\end{tabular}}
+
+\newenvironment{dem}{\noindent %
+   \begin{tabular}{||l} \textsl{D\'emonstration :} \\ % 
+   \begin{minipage}{15.5cm} \footnotesize} %
+   {\end{minipage}\end{tabular}}
+
+\newenvironment{abst}{\begin{quotation}\sl}{\end{quotation}}
+
+\newenvironment{eqnbox}{\begin{equation}\begin{array}{|c|}  \hline \\ 
+   \displaystyle}{\\ \\ \hline \end{array} \end{equation}}
+
+% JFM symbols:
+
+\DeclareMathSymbol{\varGamma}{\mathord}{letters}{"00}
+\DeclareMathSymbol{\varDelta}{\mathord}{letters}{"01}
+\DeclareMathSymbol{\varTheta}{\mathord}{letters}{"02}
+\DeclareMathSymbol{\varLambda}{\mathord}{letters}{"03}
+\DeclareMathSymbol{\varXi}{\mathord}{letters}{"04}
+\DeclareMathSymbol{\varPi}{\mathord}{letters}{"05}
+\DeclareMathSymbol{\varSigma}{\mathord}{letters}{"06}
+\DeclareMathSymbol{\varUpsilon}{\mathord}{letters}{"07}
+\DeclareMathSymbol{\varPhi}{\mathord}{letters}{"08}
+\DeclareMathSymbol{\varPsi}{\mathord}{letters}{"09}
+\DeclareMathSymbol{\varOmega}{\mathord}{letters}{"0A}
+
+% ---------------------------------------------------------------------
+% MISC SYMBOLS :
+% ---------------------------------------------------------------------
+
+\font\SY=msam10 
+\def\carreblanc{\hbox{\SY \char'3}}
+\def\carrenoir{\hbox{\SY \char'4}}
+\def\diamblanc{\hbox{\SY \char'6}}
+\def\diamnoir{\hbox{\SY \char'7}}
+\def\triblancright{\hbox{\SY \char'102}}
+\def\triblancleft{\hbox{\SY \char'103}}
+\def\triblancup{\hbox{\SY \char'115}}
+\def\triblancdown{\hbox{\SY \char'117}}
+\def\trinoirright{\hbox{\SY \char'111}}
+\def\trinoirleft{\hbox{\SY \char'112}}
+\def\trinoirup{\hbox{\SY \char'116}}
+\def\trinoirdown{\hbox{\SY \char'110}}
+\def\rondblanc{\hbox{\scriptsize $\bigcirc$}}
+\def\rondnoir{\hbox{\LARGE $\bullet$}}
+
+\font\BB=msbm10 scaled 1095
+\def\setr{\hbox{\BB R}}
+\def\setc{\hbox{\BB C}}
+\def\setn{\hbox{\BB N}}
+\def\setz{\hbox{\BB Z}}
+
+% Pour enlever la numerotation des pages de la table des matieres:
+
+%%%% debut macro, a placer dans preambule %%%%
+\makeatletter
+\def\addcontentsline@toc#1#2#3{%
+   \addtocontents{#1}{\protect\thispagestyle{empty}}%
+   \addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
+\def\addcontentsline#1#2#3{%
+  \expandafter\@ifundefined{addcontentsline@#1}%
+  {\addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
+  {\csname addcontentsline@#1\endcsname{#1}{#2}{#3}}}
+\makeatother
+%%%% fin macro %%%%
+
+\newcommand{\titre}[1]{ %
+  \medskip \noindent \underline{\makebox[\textwidth][l]{\textbf{#1}\textcolor{white}{pl}}}}% \\}
+
+\newcommand{\sstitre}[1]{ %
+  \bigskip \centerline{\textbf{#1}} \smallskip}
+
+\def\draft{\overfullrule 5pt} % The \draft command marks the overful boxes
+
+\def\indentlist{\list%
+        {}{\labelwidth 0pt \leftmargin 3\labelsep}}
+\let\endindentlist\endlist \relax
+
+\def\datelist{\list%
+        {}{\settowidth\labelwidth{[2001/02 :]}
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep}
+}
+\let\enddatelist\endlist \relax
+
+\def\longuelist{\list%
+        {}{\settowidth\labelwidth{[Etablissement :]}
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep}
+}
+\let\endlonguelist\endlist \relax
+
+\def\shortlist{\list%
+        {}{\settowidth\labelwidth{$\bullet$}
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep}
+}
+\let\endshortlist\endlist \relax
+

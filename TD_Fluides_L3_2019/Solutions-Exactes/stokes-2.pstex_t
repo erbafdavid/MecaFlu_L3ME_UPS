@@ -1,0 +1,16 @@
+\begin{picture}(0,0)%
+\epsfig{file=stokes-2.pstex}%
+\end{picture}%
+\setlength{\unitlength}{3108sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2397,1299)(221,-1031)
+\put(2296,-331){\makebox(0,0)[lb]{\smash{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}$\vec{e}_y$}}}
+\put(2491,-576){\makebox(0,0)[lb]{\smash{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}$\vec{e}_x$}}}
+\put(687,-854){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$U\cos(\omega t)$}}}
+\end{picture}

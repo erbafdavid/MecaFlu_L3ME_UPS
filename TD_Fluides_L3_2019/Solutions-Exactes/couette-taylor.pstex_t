@@ -1,0 +1,22 @@
+\begin{picture}(0,0)%
+\epsfig{file=couette-taylor.pstex}%
+\end{picture}%
+\setlength{\unitlength}{2901sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2180,1817)(83,-1197)
+\put(991,-260){\makebox(0,0)[lb]{\smash{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}$O$}}}
+\put(2101,-218){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$r$}}}
+\put(1355,-788){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$R_1$}}}
+\put(1936,-852){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$R_2$}}}
+\put(841,-466){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$\Omega_1$}}}
+\put( 83,385){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$\Omega_2$}}}
+\put(1393,-172){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$\theta$}}}
+\put(1594,515){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$\vec{e}_r$}}}
+\put(1114,410){\makebox(0,0)[lb]{\smash{\SetFigFont{6}{7.2}{\familydefault}{\mddefault}{\updefault}$\vec{e}_\theta$}}}
+\end{picture}

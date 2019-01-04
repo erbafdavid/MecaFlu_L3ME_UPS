@@ -1,0 +1,27 @@
+\begin{picture}(0,0)%
+\includegraphics{cornue.pstex}%
+\end{picture}%
+\setlength{\unitlength}{5221sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2232,1802)(290,-1187)
+\put(406,-1051){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$0$}%
+}}}
+\put(406,209){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$h$}%
+}}}
+\put(856,389){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$z$}%
+}}}
+\put(901,-196){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\vec{g}$}%
+}}}
+\put(1621,-961){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S$}%
+}}}
+\put(1576,389){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$P_a$}%
+}}}
+\put(2251,389){\makebox(0,0)[lb]{\smash{\SetFigFont{14}{16.8}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}(a)}%
+}}}
+\end{picture}

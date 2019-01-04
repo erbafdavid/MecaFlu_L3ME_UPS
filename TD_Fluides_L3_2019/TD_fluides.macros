@@ -1,0 +1,450 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% LaTeX File including definition of macros (commands & environments)
+%
+% Pierre Brancher - IMFT/UPS - version 08.11.17
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%==================================================================================================
+% New commands:
+%==================================================================================================
+
+%----------------
+% Miscellaneous :
+%----------------
+
+\newcommand{\visiblespace}{\LARGE\textvisiblespace}
+
+\newcommand{\mycaption}[1]{\caption{\sl #1}}
+
+\newcommand{\oneline}[1]{\underline{\hspace{#1}}}
+\newcommand{\twolines}[1]{\underline{\underline{\hspace{#1}}}}
+
+\newcommand{\pcsh}[1]{\begin{quotation} \textsf{#1} \end{quotation}}
+
+\newcommand{\csh}[1]{\textsf{#1}}
+\newcommand{\lcsh}[1]{\textsf{\textsl{#1}}}
+
+\newcommand{\ligne}[1]{\hrule height #1\linethickness \hfill}
+
+\newcommand{\myline}{\noindent\underline{\hspace{\textwidth}}}
+
+\newcommand{\thickline}[2]{\linethickness{#1} \line(1, 0){#2}}
+
+\newcommand{\bareme}[2]{\reversemarginpar \marginpar{\hspace*{#1}/#2}}
+
+% Titre TD Solides S3 :
+
+\newcommand{\titreTD}[1]{%
+  \begin{center}%
+    \thickline{0.4mm}{150}%
+    \\ \vspace{6mm}%
+    \textbf{\Large #1}%
+    \\ \vspace{3mm}%
+    \thickline{0.4mm}{150}%
+  \end{center}%
+}
+
+\newcommand{\mysection}[1]{\vskip 0.5cm \section{#1}\vskip -1.4cm 
+   \myline \vskip 0.4cm \myline \bigskip}
+
+\newcommand{\etal}{\textit{et al.}}
+
+\newcommand{\varray}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\puissance}[1]{^{\mbox{\footnotesize #1}}}
+\newcommand{\indice}[1]{_{\mbox{\footnotesize #1}}}
+
+\newcommand{\exercice}[1]{\vskip 10mm \noindent \textbf{\large #1} \vskip 5mm}
+
+\newcommand{\TPtitle}[2]{\begin{center}\fbox{\begin{minipage}[r]{10cm}
+   \large \bf \center #1 \end{minipage}}\end{center}\medskip}
+
+\newcommand{\UPStitle}[3]{\noindent \textsc{Universit\'e Paul Sabatier}
+   \hspace{8.5cm} \textsc{Ann\'ee #1} \\ \noindent \textsc{#2} 
+   \vspace{1.cm} \\ \centerline{\textbf{\LARGE #3}}}
+
+\newcommand{\eqbox}[1]{\begin{array}{|c|}\hline \displaystyle #1 \\ 
+   \hline\end{array}}
+
+\newcommand{\eqboxx}[1]{\begin{array}{||c||}\hline \displaystyle #1 \\ 
+   \hline \end{array}}
+
+\newcommand{\boxon}[2]{\begin{minipage}{#1}\begin{center} #2 \end{center}\end{minipage}}
+
+\newcommand{\frimage}[1]{\begin{tabular}{c}\\ \input{#1}\\ \end{tabular}}
+
+%--------------------------------------
+% Style des vecteurs : fleche ou gras ?
+%--------------------------------------
+
+\newcommand{\myvec}[1]{\mathbf{#1}}
+
+%---------------------------
+% Operateurs differentiels :
+%---------------------------
+
+\newcommand{\divergence}{\mbox{\rm div}\,}
+
+% \newcommand{\gradient}{\vec{\mbox{gra}}\mbox{d}\,}
+\newcommand{\gradient}{\mathbf{grad}\,}
+%\newcommand{\ggradient}{\stackrel{\Rightarrow}{\mbox{gra}}\!\!\,\mbox{d}\,}
+\newcommand{\ggradient}{\accent{=}{\mbox{gra}}\mbox{d}\,}
+
+% \newcommand{\rot}{\vec{\mbox{ro}}\mbox{t}\,}
+\newcommand{\rot}{\mathbf{rot}\,}
+
+% \newcommand{\vnabla}{\vec{\nabla}}
+\newcommand{\vnabla}{\boldsymbol{\nabla}}
+
+%----------------------
+% Fonctions speciales :
+%----------------------
+
+\newcommand{\besselj}[1]{\mbox{J}_{#1}}
+\newcommand{\besselk}[1]{\mbox{K}_{#1}}
+\newcommand{\bessely}[1]{\mbox{Y}_{#1}}
+\newcommand{\besseli}[1]{\mbox{I}_{#1}}
+
+%---------------------------------
+% Vecteurs, tenseurs et torseurs :
+%---------------------------------
+
+\newcommand{\ex}{\mathbf{e}_{x}}
+\newcommand{\ey}{\mathbf{e}_{y}}
+\newcommand{\ez}{\mathbf{e}_{z}}
+
+\newcommand{\er}{\mathbf{e}_{r}}
+\newcommand{\erho}{\mathbf{e}_{\rho}}
+\newcommand{\ephi}{\mathbf{e}_{\varphi}}
+\newcommand{\etheta}{\mathbf{e}_{\theta}}
+
+\newcommand{\vect}[1]{\stackrel{\rightarrow}{#1}}
+\newcommand{\vectl}[1]{\stackrel{\longrightarrow}{#1}}
+
+\newcommand{\tensor}[1]{\accentset{=}{#1}} % needs \usepackage{accents}
+%\newcommand{\tensor}[1]{\stackrel{\Rightarrow}{#1}}
+%\newcommand{\tensor}[1]{\mbox{\sl \textbf{#1}}}
+
+\newcommand{\torseur}[4]{
+   \!\!\!\! \left . \begin{array}{c} \\ \\ _#1 \end{array} \!\!\!
+   \right \{ \!\!\!
+   \begin{array}{#4} #2 \\ \\ #3 \end{array}}
+
+%-----------------------
+% Integrales multiples :
+%-----------------------
+
+% Utiliser plutôt le package amsmath avec les commandes iint, iiint, ...
+
+\newcommand{\odblint}[1]{\int\!\!\!\!\!\int_{#1} \hskip -7mm \bigcirc \;}
+\newcommand{\dblint}{\int\!\!\!\!\!\int}
+\newcommand{\tplint}{\int\!\!\!\!\!\int\!\!\!\!\!\int}
+
+% Definition de symboles d'integrale de type valeur principal de Cauchy, ...
+% (pas d'equivalent dans les packages amsmath, amssymb, ...)
+ 
+\def\Xint#1{\mathchoice
+  {\XXint\displaystyle\textstyle{#1}}%
+  {\XXint\textstyle\scriptstyle{#1}}%
+  {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+  {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+  \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+    \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+\def\cauchyint{\Xint{C}}
+
+%------------
+% Fractions :
+%------------
+
+% \renewcommand{\dfrac}[2]{\displaystyle \frac{#1}{#2}}
+
+%--------------
+% JFM symbols :
+%--------------
+
+\DeclareMathSymbol{\varGamma}{\mathord}{letters}{"00}
+\DeclareMathSymbol{\varDelta}{\mathord}{letters}{"01}
+\DeclareMathSymbol{\varTheta}{\mathord}{letters}{"02}
+\DeclareMathSymbol{\varLambda}{\mathord}{letters}{"03}
+\DeclareMathSymbol{\varXi}{\mathord}{letters}{"04}
+\DeclareMathSymbol{\varPi}{\mathord}{letters}{"05}
+\DeclareMathSymbol{\varSigma}{\mathord}{letters}{"06}
+\DeclareMathSymbol{\varUpsilon}{\mathord}{letters}{"07}
+\DeclareMathSymbol{\varPhi}{\mathord}{letters}{"08}
+\DeclareMathSymbol{\varPsi}{\mathord}{letters}{"09}
+\DeclareMathSymbol{\varOmega}{\mathord}{letters}{"0A}
+
+%------------------------------------
+% Derivees ordinaires et partielles :
+%------------------------------------
+
+\newcommand{\dpdt}[1]{\dfrac{\partial #1}{\partial t}}
+\newcommand{\dpdx}[1]{\dfrac{\partial #1}{\partial x}}
+\newcommand{\dpdy}[1]{\dfrac{\partial #1}{\partial y}}
+\newcommand{\dpdz}[1]{\dfrac{\partial #1}{\partial z}}
+\newcommand{\ddpdx}[1]{\dfrac{\partial^2 #1}{\partial x^2}}
+\newcommand{\ddpdy}[1]{\dfrac{\partial^2 #1}{\partial y^2}}
+\newcommand{\ddpdz}[1]{\dfrac{\partial^2 #1}{\partial z^2}}
+
+\newcommand{\dpdr}[1]{\dfrac{\partial #1}{\partial r}}
+\newcommand{\dpdrho}[1]{\dfrac{\partial #1}{\partial \rho}}
+\newcommand{\dpdphi}[1]{\dfrac{\partial #1}{\partial \varphi}}
+\newcommand{\dpdtheta}[1]{\dfrac{\partial #1}{\partial \theta}}
+
+\newcommand{\ddp}[2]{\dfrac{\partial #1}{\partial #2}}
+
+\newcommand{\ddpdr}[1]{\dfrac{\partial^2 #1}{\partial r^2}}
+\newcommand{\ddpdrho}[1]{\dfrac{\partial^2 #1}{\partial \rho^2}}
+\newcommand{\ddpdphi}[1]{\dfrac{\partial^2 #1}{\partial \varphi^2}}
+\newcommand{\ddpdtheta}[1]{\dfrac{\partial ^2#1}{\partial \theta^2}}
+
+\newcommand{\ddt}[1]{\dfrac{d #1}{dt}}
+\newcommand{\ddx}[1]{\dfrac{d #1}{dx}}
+\newcommand{\ddy}[1]{\dfrac{d #1}{dy}}
+\newcommand{\ddz}[1]{\dfrac{d #1}{dz}}
+
+\newcommand{\ux}{u_x}
+\newcommand{\uy}{u_y}
+\newcommand{\uz}{u_z}
+
+\newcommand{\ur}{u_r}
+\newcommand{\uq}{u_\theta}
+
+\newcommand{\dpdq}[1]{\dfrac{\partial #1}{\partial \theta}}
+\newcommand{\ddpdq}[1]{\dfrac{\partial^2 #1}{\partial \theta^2}}
+
+
+\newcommand{\dpart}[1]{\dpdt{#1}+\ux \dpdx{#1}+\uy \dpdy{#1}+\uz \dpdz{#1}}
+\newcommand{\lapla}[1]{\ddpdx{#1} + \ddpdy{#1} + \ddpdz{#1}}
+
+\newcommand{\dpartcyl}[1]{\dpdt{#1} + \ur \dpdr{#1}
+              + \dfrac{\uq}{r} \dpdq{#1} + \uz \dpdz{#1}}
+\newcommand{\laplacyl}[1]{\dfrac{1}{r} \dpdr{} \left( r \dpdr{#1} \right)
+              + \dfrac{1}{r^2} \ddpdq{#1} + \ddpdz{#1}}
+
+%---------
+% Matlab :
+%---------
+
+\newcommand{\mformat}[1]{{\tt #1}} % Format general
+
+\newcommand{\mvar}[1]{\mformat{\slshape #1}} % Variable MATLAB
+
+\newcommand{\minput}[1]{\begin{quotation} $>\!>\;$ \mformat{#1} \end{quotation}}
+
+\newcommand{\minputt}[1]{\begin{quotation} \mformat{#1} \end{quotation}}
+
+\newcommand{\minputs}[1]{$>\!>\;$ \mformat{#1}}
+
+\newcommand{\moutput}[2]{\begin{quotation} \begin{tabular}{rl} \mformat{#1}& \\
+                         & \mformat{#2} \end{tabular} \end{quotation}}
+
+\newcommand{\moutputs}[2]{\begin{tabular}{rl} \mformat{#1}& \\
+                         & \mformat{#2} \end{tabular}}
+
+\newcommand{\rhditem}{\item[$\!\!\!\rhd$]}
+
+\newenvironment{tableau}{\noindent\begin{tabular}{ll}}{\end{tabular}}
+
+\newcommand{\titre}[2]{
+	\hline
+	\multicolumn{2}{|p{15cm}|}{}
+	\\
+	\multicolumn{2}{|l|}{\textbf{#1} \hfill $>>$ \textsf{#2}}
+	\\ 
+	\hline 
+}
+\newcommand{\sstitre}[1]{
+	& \\
+	\multicolumn{2}{l}{\textbf{#1}}
+	\\
+	\hline
+}
+
+\newcommand{\commande}[2]{\textsf{#1} & #2}
+
+\newenvironment{dtableau}{\noindent\begin{tabular}{llll}}{\end{tabular}}
+
+\newcommand{\dtitre}[2]{
+	\hline
+	\multicolumn{4}{|p{15cm}|}{}
+	\\
+	\multicolumn{4}{|l|}{\textbf{#1} \hfill $>>$ \textsf{#2}}
+	\\ 
+	\hline 
+}
+\newcommand{\dsstitre}[1]{
+	& \\
+	\multicolumn{4}{l}{\textbf{#1}}
+	\\
+	\hline
+}
+
+\newcommand{\mbs}[1]{matlab/#1}
+
+\newcommand{\titrematlab}[2]{%
+  \sf \Large %
+  \begin{titlepage} %
+    \begin{center}%
+      \twolines{20cm} \\ \vspace{8mm} %
+      \textbf{\huge M{\LARGE ATLAB} en vrac \ldots} \vspace{2mm} \\%  
+      \twolines{20cm} \\ \vspace{5mm} %
+      \textsl{\Large #1} \\ \vspace{2cm} %
+      \begin{picture}(160, 80) %
+	\put( 15, 0){\includegraphics[height=8cm]{./Figures/magic-square.png}} %
+	\put(105, 12.5){%
+	  \begin{minipage}{8cm}%
+	    \begin{flushleft}%
+	      \large %
+	      Pierre B{\normalsize RANCHER}\\ IMFT \\ UFR MIG, UPS \\ %
+	      \textsf{brancher{\rm @}imft.fr}%
+	    \end{flushleft}%
+	  \end{minipage}%
+	}%
+      \end{picture}%
+    \end{center}%
+    \vspace{10mm}
+    \begin{flushright} %
+      \large Version #2 %
+    \end{flushright} %
+  \end{titlepage}%
+}
+
+\newcommand{\Matlab}{\textsc{Matlab}}
+
+%----------------------
+% Annee universitaire :
+%----------------------
+
+\newcounter{annee}
+\setcounter{annee}{\number\year}
+\newcounter{anneeplus}
+\setcounter{anneeplus}{\number\year}
+\addtocounter{anneeplus}{1}
+%\newcommand{\annee}{\the\year}
+\newcommand{\anneeuniversitairepremiersemestre}{\theannee--\theanneeplus}
+\newcounter{anneemoins}
+\setcounter{anneemoins}{\number\year}
+\addtocounter{anneemoins}{-1}
+\newcommand{\anneeuniversitairesecondsemestre}{\theanneemoins--\theannee}
+
+%==================================================================================================
+% New environments:
+%==================================================================================================
+
+%---------
+% MyEnum :
+%---------
+
+\newcounter{MyEnumCounter}
+\newcounter{MySaveCounter}
+\newenvironment{MyEnum}{%
+  \begin{list}{\arabic{MyEnumCounter}.}{\usecounter{MyEnumCounter}%
+  \setcounter{MyEnumCounter}{\value{MySaveCounter}}}
+  }{%
+  \setcounter{MySaveCounter}{\value{MyEnumCounter}}\end{list}%
+}
+\newcommand{\MyEnumReset}{\setcounter{MySaveCounter}{0}}
+
+% deuxcols :
+
+\newenvironment{deuxcols}{\begin{tabular}{lr} \hspace*{-9.7mm}}{\end{tabular}}
+
+% dem :
+
+\newenvironment{dem}{\noindent %
+  \begin{tabular}{||l} \textsl{D\'emonstration :} \\ % 
+    \begin{minipage}{15.5cm} \footnotesize} %
+	       {\end{minipage}\end{tabular}}
+
+% abst :
+
+\newenvironment{abst}{\begin{quotation}\sl}{\end{quotation}}
+
+% eqnbox :
+
+\newenvironment{eqnbox}{\begin{equation}\begin{array}{|c|}  \hline \\ 
+      \displaystyle}{\\ \\ \hline \end{array} \end{equation}}
+
+%==================================================================================================
+% Misc symbols :
+%==================================================================================================
+
+\newcommand{\bs}{\symbol{92}}
+\newcommand{\deuxpts}{\symbol{58}}
+
+\font\SY=msam10 
+\def\carreblanc{\hbox{\SY \char'3}}
+\def\carrenoir{\hbox{\SY \char'4}}
+\def\diamblanc{\hbox{\SY \char'6}}
+\def\diamnoir{\hbox{\SY \char'7}}
+\def\triblancright{\hbox{\SY \char'102}}
+\def\triblancleft{\hbox{\SY \char'103}}
+\def\triblancup{\hbox{\SY \char'115}}
+\def\triblancdown{\hbox{\SY \char'117}}
+\def\trinoirright{\hbox{\SY \char'111}}
+\def\trinoirleft{\hbox{\SY \char'112}}
+\def\trinoirup{\hbox{\SY \char'116}}
+\def\trinoirdown{\hbox{\SY \char'110}}
+\def\rondblanc{\hbox{\scriptsize $\bigcirc$}}
+\def\rondnoir{\hbox{\LARGE $\bullet$}}
+
+\font\BB=msbm10 scaled 1095
+\def\setr{\hbox{\BB R}}
+\def\setc{\hbox{\BB C}}
+\def\setn{\hbox{\BB N}}
+\def\setz{\hbox{\BB Z}}
+
+%==================================================================================================
+% Misc customisation :
+%==================================================================================================
+
+%------------------------------------------------------------------
+% Pour enlever la numerotation des pages de la table des matieres : 
+%------------------------------------------------------------------
+
+% debut macro, a placer dans preambule %
+\makeatletter
+\def\addcontentsline@toc#1#2#3{%
+   \addtocontents{#1}{\protect\thispagestyle{empty}}%
+   \addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
+\def\addcontentsline#1#2#3{%
+  \expandafter\@ifundefined{addcontentsline@#1}%
+  {\addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
+  {\csname addcontentsline@#1\endcsname{#1}{#2}{#3}}}
+\makeatother
+% fin macro %
+
+%---------------------------------------------------------------
+% Redefinition de la taille relative des titres de section
+% et de subsection : a inclure dans le preambule (cours Matlab)
+%---------------------------------------------------------------
+% NB: en dehors des fichiers *.sty, il faut toujours entourer
+%     les passages contenant le caractere @ des commandes
+%     \makeatletter et \makeatother.
+%
+% \usepackage{ulem}
+% 
+% \makeatletter
+% \renewcommand\mysubsection{\@startsection {subsection}{1}{\z@}%
+%                      {-3.5ex \@plus -1ex \@minus -.2ex}%
+%                      {2.3ex \@plus.2ex}%
+%                      {\sf\LARGE\bfseries}}
+% \makeatother
+% 
+% \makeatletter
+% \renewcommand\mysection{\@startsection {section}{1}{\z@}%
+%                      {-3.5ex \@plus -1ex \@minus -.2ex}%
+%                     {2.3ex \@plus.2ex}%
+%                     {\sf\huge\bfseries}}
+% \makeatother
+%
+% \renewcommand{\paragraph}[1]{\noindent {\sf\bfseries #1}}
+
+
+

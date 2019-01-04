@@ -1,0 +1,180 @@
+
+\documentclass[10pt, a4paper]{article}
+
+\setlength{\textheight}{25.5cm}
+\setlength{\topmargin}{-18mm}
+\setlength{\textwidth}{16cm}
+\setlength{\oddsidemargin}{0mm} % marge gauche (im)paire = 1in. + x1mm
+%\setlength{\evensidemargin}{-5mm} % book : marge gauche paire = 1in. + x2mm
+
+\setlength{\fboxsep}{1mm}
+\setlength{\unitlength}{1mm}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}  
+\usepackage{latexsym}
+\usepackage[francais]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage{textcomp}
+ \usepackage{lscape}
+\usepackage{accents}
+
+\usepackage[final]{pdfpages}
+
+
+\input{./TD_fluides.macros}
+%\input{../mymacros}
+
+
+\newcommand{\e}{\mathrm{e}}   
+\newcommand{\dd}{\textrm d}      
+\newcommand{\im}{\mathrm{i}}
+\newcommand{\dpa}[2]{\frac {\partial #1} {\partial #2}}   
+\newcommand{\ddpa}[2]{\frac {\partial^{2} #1} {\partial #2 ^{2}}}   
+\newcommand{\dto}[2]{\frac {{\textrm d} #1} {{\textrm d} #2}}   
+\newcommand{\ddto}[2]{\frac {{\textrm d}^{2} #1} {{\textrm d} #2 ^{2}}}
+\newcommand{\mytensor}[1]{\accentset{=}{#1}} % needs \usepackage{accents}
+
+\newcommand{\exofacile}{$^\star$}
+%\newcommand{\exonormal}{$^\star$$^\star$}
+\newcommand{\exonormal}{$^\star$}
+%\newcommand{\exodifficile}{$^\star$$^\star$$^\star$}
+\newcommand{\exodifficile}{$^\star$$^\star$}
+
+
+\newcommand{\Archives}[1]{}
+\newcommand{\comment}[1]{}
+
+\newcommand{\rep}[1]{}
+
+\graphicspath{{Figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}                                          
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\noindent
+\textsc{Universit\'e Toulouse 3 -- Paul Sabatier \hfill Ann\'ee universitaire 2018-2019}
+\\
+\textsc{L3 M\'ecanique \hfill M\'ecanique des fluides}
+
+\vspace{1cm}
+
+\begin{center}
+  \setlength{\unitlength}{1mm}
+  \hrule height 1mm
+  \vspace{6mm}
+  \textbf{\LARGE Formulaire de mécanique des fluides}
+  \\ \vspace{5mm}
+  \hrule height 1mm
+  \vspace{2cm}
+  \includegraphics[width=10cm]{bernoulli}
+\end{center}
+
+\vfill
+
+\begin{flushright}
+  \large{\textsl{Equipe p\'edagogique : \\
+      D. Fabre, F. Moulin, M. Zagzoule}}
+\end{flushright}
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{TD_AnalyseDimensionnelle}
+%\include{TD_Hydrostatique}
+%\include{TD_Cinematique}
+%\include{TD_Viscosite1}
+%\include{TD_Viscosite2}
+%\include{TD_Viscosite3}
+%\include{TD_RevisionsPart1}
+\include{TD_Annexes}
+\include{TD_Annexes2}
+
+\end{document}
+
+
+
+
+\section{Equations générales de la mécanique des fluides}
+
+\subsection{ Equations générales} 
+(...)
+
+On considère ici le cas général d'un fluide Newtonien. Dans cette section on ne fait pas d'hypothèse sur le caractère compressible ou incompressible. En revanche on suppose les 
+coefficients ($k$, $\mu$) constants, et on néglige la viscosité en volume.
+
+
+\subsubsection{Bilan de masse}
+
+\paragraph{Forme locale 1 (non conservative) :}
+
+$$
+\ddt{\rho} + \rho \divergence \vec{u} = 0
+$$
+
+
+\paragraph{Forme locale 2 (conservative) :}
+
+$$
+\dpa{\rho}{t} + \divergence ( \rho \vec{u})  = 0
+$$
+
+\paragraph{Forme intégrale (volume de contrôle $\cal \Omega$ fixe):}
+$$
+\ddt{} \int_{\cal V}  \rho dV = - \oint_{\cal S} \rho \vec{u} \cdot \vec{n} dS
+$$
+
+$$
+\dpdt{} \int_{\Omega} \rho \; dV 
+		=
+		- \oint_{\partial \Omega} \rho \,  \vec{u}\cdot \vec{n} \, dS
+$$
+
+\subsection{Bilan de quantité de mouvement}
+
+\paragraph{Forme locale 1}
+\begin{equation}
+		\rho \ddt{\vec{u}} 
+		= 
+		\rho \vec{f}  - \gradient p + \mu \Delta \vec{u} + \frac{\mu}{3} \gradient \divergence \vec{u} 
+		%\label{eq:bilan_local_lagrangien_qdm}
+\end{equation}
+	
+	
+\paragraph{Forme locale 2 (conservative)}
+\begin{equation}
+	 \dpa{(\rho \vec{u})}{t} + \divergence (\rho \vec{u} \otimes \vec{u})
+		= \rho \vec{f}  - \gradient p + \divergence \mytensor{\tau}
+		%\label{eq:bilan_local_lagrangien_qdm}
+\end{equation}
+
+	
+
+
+\paragraph{Forme intégrale}
+	\begin{equation}
+		\dpdt{} \int_{\Omega} \rho \, \vec{u} \; dV 
+		=
+		\int_{\Omega} \rho \vec{f} \, dV 
+		+ \oint_{\partial \Omega} \left( -p \vec{n} + \mytensor{\tau} \cdot \vec{n}\right) \; dS
+		- \oint_{\partial \Omega} \rho \, \vec{u}\; (\vec{u}\cdot \vec{n}) \, dS
+		\label{eq:bilan_global_eulerien_qdm}
+	\end{equation}
+
+
+%\pause
+
+
+
+
+

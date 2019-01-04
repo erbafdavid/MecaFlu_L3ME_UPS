@@ -1,0 +1,264 @@
+\documentclass[12pt,a4]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc} 
+
+\usepackage{floatflt,fancyheadings,amssymb,color}
+\usepackage{psfig,epsfig}
+\usepackage{pictex}
+\usepackage{charter}
+\hoffset=-4cm 
+\voffset=-4cm
+\topmargin=15mm
+\headheight=5mm
+\headsep=15mm
+\textheight=260mm
+\oddsidemargin=30mm
+\evensidemargin=30mm
+\textwidth=170mm
+\pagestyle{plain}
+\renewcommand{\textfraction}{.10}
+\newcommand{\derp}[2]{ \frac{ \partial #1 }{ \partial #2}}
+\newcommand{\dsp} {\displaystyle}
+\newcommand{\torseur}[4]{
+\Biggl\{ {\cal #1} (#2)\Biggr \} = 
+\left \{ \begin{array}{c}
+#3  \\
+#4 
+\end{array} \right\} 
+}
+    
+    
+
+\begin{document}
+\sf 
+
+
+\begin{center}
+  Licence II mathématiques \& Mécanique, Universit\'e Paul Sabatier.
+ \vspace{0.6cm}
+ 
+Thème 5 : Ecoulements de fluides visqueux incompressibles.
+
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+\section{Pompage d'un liquide par entrainement}
+\begin{center}
+\input{Pompage.pstex_t}
+\end{center}
+
+La figure ci-dessus représente un dispositif utilisés dans certains
+procédés industriels pour faire monter un liquide d'un réservoir à un
+autre situé plus haut. Le fluide monte à travers un canal, 
+parallèle, de largeur $a$ et de profondeur $b$, situé entre un tapis
+roulant, se déplacant à la vitesse $V_0$, et une paroi fixe.
+
+
+On suppose que l'écoulement peut être considéré comme parallèle et établi 
+dans tout le canal, c'est à dire que $\vec u(x,y,t) = u(y) \vec e_x$
+pour tout $x \in [0,L]$. 
+
+On suppose le fluide Newtonien et incompressible, de masse volumique 
+$\rho$ et de viscosité dynamique $\mu$. 
+
+\begin{enumerate}
+
+\item Justifier pourquoi on peut considérer que le gradient de pression
+$\partial p/\partial x$ est nul à l'intérieur du canal.
+
+\item Donnez l'équation différentielle vérifiée par la vitesse 
+$u(y)$ à l'intérieur du canal, et précisez les conditions aux 
+limites $u(0)$ et $u(a)$.
+
+\item Déterminez le profil de vitesse $u(y)$. On l'exprimera en fonction
+de $y/a$, et en faisant apparaître le paramètre $N = 2 \nu V_0/(g a^2)$.
+
+\item Calculez le débit du fluide dans le canal, et trouvez une condition
+sur $N$ pour que le système joue le rôle de pompe.
+
+\item Exprimez la contrainte visqueuse $\tau_{xy}(y)$. 
+En déduire la force $\vec F$ exercée sur le tapis roulant, puis
+la puissance ${\cal P}_m$ fournie par le moteur.
+
+\item Appliquez le théorème de l'énergie mécanique au fluide traversant 
+le dispositif entre deux instants $t$ et $t+dt$. En déduire la puissance
+mécanique ${\cal P}_u$ gagnée par le fluide.
+
+\item Calculez le rendement $\eta = {\cal P}_u / {\cal P}_m$ du dispositif.
+pour quelle valeur de $N$ ce rendement est-il maximal ?       
+ 
+\end{enumerate}
+
+\section{Aspiration de la couche limite}
+
+\begin{center}
+\input{CL_Aspi.pstex_t}
+\end{center}
+
+
+Dans les écoulements à grands nombres de Reynolds caractéristiques
+de l'aérodynamique, l'écoulement autour d'obstacles est caractérisé
+par la présence de couche limite. Dans certains cas ces couches limites
+peuvent être affectées par un phénomène de décollement qui perturbe
+grandement les écoulements. Une facon d'éviter ces effets consiste à 
+aspirer la couche limite à travers une paroi poreuse.
+
+Dans cet exercice on considère une plaque plane disposée parallèlement
+à l'écoulement. Loin de la plaque (en $y \rightarrow \infty$), 
+la composante axiale de vitesse vaut $U_0$, et la pression est uniforme
+avec la valeur $p=p_a$.
+A la paroi de la plaque, la vitesse vaut $\vec u = -v_a \vec e_y$, où
+la vitesse d'aspiration $v_a$ est supposée constante.
+
+
+\begin{enumerate}
+
+\item Ecrire les équations de Navier-Stokes et de continuité 
+(on suppose l'écoulement incompressible, et on néglige la gravité).
+
+ 
+\item Précisez les conditions limites particulières à ce problème, 
+en $y=0$ et en $y \rightarrow \infty$.
+
+\item On cherche une solution particulière à ce problème
+sous forme d'un écoulement parallèle stationnaire et établi, 
+de la forme $\vec u = u(y) \vec e_x + v(y) \vec e_y$. 
+Montrez que $v(y)$ et la pression $p$ sont uniformes, et calculez $u(y)$.
+
+\item Calculez l'épaisseur de la couche limite $\delta$, définie comme
+la position à laquelle $u(y = \delta ) = 0.99 u(y \rightarrow \infty)$.
+
+
+\item Calculez la contrainte pariétale $\tau_{xy}(y=0)$. En déduire
+la force exercée sur une plaque plane (supposée de longueur $L$ et de largeur
+$b$.)
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Viscosimètre de Couette}
+
+\begin{center}
+\input{Viscosimetre.pstex_t}
+\end{center}
+
+
+
+Le Viscosimètre de Couette est un dispositif constitué
+de deux cylindres coaxiaux de rayon $R_1$ et $R_2$, et de hauteur $H$.
+L'espace entre les deux cylindres est rempli d'un liquide incompressible.
+Le cylindre intérieur tourne à la vitesse angulaire $\Omega$ autour
+de son axe $e_z$, et le cylindre extérieur est fixe. 
+On suppose que l'espace entre les cylindres est faible,
+c.a.d. $(R_2-R_1) \ll R_1$, de sorte que l'écoulement peut être considéré 
+comme parallèle, et donné par $\vec u = v(r) \vec e_\theta$ (cf. figure).
+
+\begin{enumerate}
+
+\item En supposant le fluide Newtonien et de viscosité dynamique $\mu$,
+donnez la formule reliant la contrainte visqueuse $\tau_{\theta r}$ en fonction
+du taux de cisaillement $\partial v/\partial r$.
+
+\item Montrez, par un bilan des forces sur un volume élémentaire 
+(ou en écrivant directement l'équation de Navier), que
+le taux de cisaillement $\partial v/\partial r$ est uniforme dans 
+l'écoulement. 
+
+\item Précisez les conditions aux limites $v(R_1)$ et $v(R_2)$.
+
+\item En déduire la loi de vitesse $v(r)$.
+
+\item Calculez le moment $\vec {\cal M}_O$ (par rapport à un point $O$ de l'axe des
+cylindres) des efforts exercés par le fluide sur
+le cylindre intérieur, en fonction de $\Omega, \mu$ et des dimensions du
+cylindre.
+
+\item Application : les dimensions du viscosimètre sont $R_1 = 20cm$, $R_2 =
+21cm$, $H = 20cm$. On fait tourner le cylindre intérieur à la vitesse
+$\Omega = 10 tours/s$, et on mesure un moment $|\vec {\cal M}_O| = 10 Nm$.
+Donnez la viscosité cinématique du fluide. 
+
+
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ecoulement de Poiseuille dans un capillaire}
+
+\begin{center}
+\input{Capillaire.pstex_t}
+\end{center}
+
+
+
+L'écoulement d'un fluide visqueux dans un tube cylindrique 
+est d'une importance considérable car il se retrouve dans de nombreuses
+situations en biologie (vaissaux sanguins, sève des arbres, etc...) et
+industrielles.
+
+On étudie ici l'écoulement d'un fluide newtonien et incompressible 
+dans un  tube capillaire (c.a.d. de dimensions
+comparables à celle d'un cheveu) de rayon $a$ et de longueur $L$, 
+sous l'effet de la gravité (cf. figure).
+
+On suppose l'écoulement stationnaire et établi, de la forme 
+$\vec u = u(r) \vec e_x$. Dans ce cas l'écoulement est gouverné
+par la version en coordonnées cylindriques de l'équation de 
+Navier stationnnaire :
+
+\begin{equation}
+\rho g - \frac{\partial p}{\partial x}
++ \mu \frac{1}{r}\frac{\partial}{\partial r}
+\left( r \frac{\partial u}{\partial r} \right)  = 0.
+\end{equation}
+
+
+
+\begin{enumerate}
+
+\item Retrouvez l'expression (1) donnée ci-dessus en effectuant 
+un bilan des efforts exercés sur un volume élémentaire 
+$\delta V = d x \times d r \times (r d \theta)$, et projeté 
+dans la direction $\vec e_x$.
+
+(On précise que la contrainte visqueuse est 
+donnée par $\tau_{xr} = \mu \partial u/\partial r$). 
+
+\item Justifiez pourquoi le gradient de pression est nul.
+
+\item Précisez la condition limite pour $u$ en $r=a$.
+
+\item En intégrant (1) et en tenant compte de la condition
+limite en $r=a$ et d'une condition en $r=0$ exprimant la régularité
+de l'écoulement, donnez la loi de vitesse $u(r)$ en fonction
+de $g,\mu$ et $a$.
+
+\item Tracez la forme de la fonction $u(r)$ pour $r \in [-a,a]$.
+Précisez en particulier la valeur $u(0)$ prise sur l'axe du tube.
+
+\item Calculez le flux volumique $Q_V$ traversant le capilaire,
+et montrez que celui-ci est donné par la loi suivante :
+$$
+Q_v = \frac{\pi g a^4}{8 \nu}
+$$
+
+
+\item Application : le rayon du tube est $a=0.1mm$, la gravité vaut
+$g=9.81 m^2/s$, et on mesure un débit de $56 cm^3/min$. Donnez la viscosité 
+cinématique du fluide.
+
+ 
+
+\end{enumerate}
+
+
+%\section{Ecoulement sur un plan incliné}
+
+%\section{Premier et second problèmes de Stokes}
+
+\end{document}

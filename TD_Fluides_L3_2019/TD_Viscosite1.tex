@@ -1,0 +1,100 @@
+% !TEX root = TD_fluides_part1.tex
+
+
+\section{Ecoulements visqueux I : Rhéologie et écoulements stationnaires parallèles}
+
+
+\setcounter{subsection}{-1}
+
+\subsection{Ecoulement de Poiseuille} 
+
+{\em (exercice préparatoire, correction sur moodle)} 
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Ecoulement de dentifrice}
+%--------------------------------------------------------------------------------------------------
+
+Le dentifrice est un exemple de "fluide \`a seuil" qui ne s'\'ecoule que si la contrainte 
+de cisaillement est sup\'erieure \`a un seuil $\tau_c$. 
+Consid\'erons donc un tube cylindrique de longueur $L$ rempli de dentifrice, et soumis \`a 
+une diff\'erence de pression $p_e - p_s$. 
+\begin{enumerate}
+\item 
+  D\'eterminer le profil de la contrainte de cisaillement dans le tube. 
+\item 
+  A partir de quelle diff\'erence de pression le dentifrice s'\'ecoule-t-il ? 
+\item 
+  Etablir l'expression du champ des vitesses, et repr\'esenter ce champ. 
+\item 
+  Etablir l'expression du d\'ebit en fonction du gradient de pression. 
+\end{enumerate}
+
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Film de peinture (Partiel 2018)}
+%--------------------------------------------------------------------------------------------------
+
+On consid\`ere un liquide de masse volumique $\rho$ uniforme qui s'écoule 
+sous la forme d'un film d'\'epaisseur uniforme $h$ sur un plan inclin\'e 
+d'un angle $\theta$ par rapport \`a l'horizontale. On introduit un repère $(x,y)$ où la direction 
+$x$ est alignée avec le plan incliné et $y$ est la direction perpendiculaire.
+
+%Soit $q$ le d\'ebit-volume impos\'e par unit\'e de largeur. 
+
+Dans cet exercice on repartira de l'équation de Cauchy écrite sous la forme suivante :
+
+$$
+\rho \frac{ d \vec{u}}{d t}  =  \rho \vec{ g} - \vec{grad} p + \vec{div} ( \mytensor{\tau} )
+$$
+
+\begin{enumerate}
+\item 
+Sous des hypothèses que vous préciserez, montrez que l'équation de Cauchy peut
+se ramener à l'équation suivante :
+$$ 
+ 0 =  \rho g \sin \theta + \frac{\partial \tau_{xy} }{\partial y}
+$$
+%$$
+%0 =  - \frac{\partial p}{\partial y} + \rho g \cos \theta 
+%$$
+
+\item 
+Après avoir précisé la condition limite vérifiée par la contrainte en $y=h$,  établir la loi 
+$\tau_{xy}(y)$ donnant la contrainte visqueuse dans le film. 
+
+\item 
+En déduire que la contrainte est maximale (en module) à la base du film et vaut :
+$$ 
+\tau_{xy}(y=0)  = - \rho g h \sin \theta 
+$$ 
+Donnez une interprétation simple de cette expression.
+
+\item Dans le cas d'un fluide Newtonien, justifiez que la loi de vitesse $u(y)$ 
+correspond à un polynôme d'ordre 2, et tracez la forme du profil $u(y)$ correspondant
+(on ne demande pas la résolution mathématique complète du problème).
+
+Dans la suite on considère le cas d'un fluide non Newtonien obéissant à la loi de Bingham:
+$$
+\frac{\partial u}{\partial y }  = 
+\left\{ \begin{array}{ll}  0 & \quad (|\tau_{xy}| < \tau_c) \\  
+\frac{1}{\mu} (\tau_{xy}-\tau_c) & \quad ( \tau_{xy} > \tau_c) \\
+\frac{1}{\mu} (\tau_{xy}+\tau_c) & \quad ( \tau_{xy} < -\tau_c) 
+\end{array}
+\right.
+$$ 
+
+\item  Tracez la forme de la loi rhéologique ($\tau_{xy}$ en fonction de 
+$\dot{\gamma} = \partial u/\partial y $) et comparez au cas d'un fluide Newtonien. Justifiez la désignation de "fluide à seuil" utilisée pour décrire ce type de fluide.
+
+\item Montrez qu'il existe une épaisseur critique $h_c$ telle que si $h<h_c$ le film ne coule pas.
+Exprimez $h_c$ en fonction de $\rho,g,\theta$ et $\tau_c$.
+
+\item Dans le cas où $h>h_c$ tracez la forme attendue pour le profil de vitesse $u(y)$ 
+(on ne demande pas une résolution mathématique complète du problème).
+
+\item Application : 
+On considère une peinture acrylique, décrite comme un fluide de Bingham avec les caractéristiques suivantes : $\tau_c = 1 Pa$ ; $\rho = 850 kg/m^3$; $\mu = 10^{-2} Pa \cdot s$. Donnez l'épaisseur maximale $h_c$ d'une couche de peinture sur une paroi verticale permettant d'éviter tout risque de coulure.
+
+\end{enumerate}

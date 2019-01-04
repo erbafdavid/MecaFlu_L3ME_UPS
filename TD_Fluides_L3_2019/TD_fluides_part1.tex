@@ -1,0 +1,107 @@
+
+\documentclass[10pt, a4paper]{article}
+
+\setlength{\textheight}{25.5cm}
+\setlength{\topmargin}{-18mm}
+\setlength{\textwidth}{16cm}
+\setlength{\oddsidemargin}{0mm} % marge gauche (im)paire = 1in. + x1mm
+%\setlength{\evensidemargin}{-5mm} % book : marge gauche paire = 1in. + x2mm
+
+\setlength{\fboxsep}{1mm}
+\setlength{\unitlength}{1mm}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}  
+\usepackage{latexsym}
+\usepackage[francais]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage{textcomp}
+ \usepackage{lscape}
+\usepackage{accents}
+
+\input{./TD_fluides.macros}
+%\input{../mymacros}
+
+
+\newcommand{\e}{\mathrm{e}}   
+\newcommand{\dd}{\textrm d}      
+\newcommand{\im}{\mathrm{i}}
+\newcommand{\dpa}[2]{\frac {\partial #1} {\partial #2}}   
+\newcommand{\ddpa}[2]{\frac {\partial^{2} #1} {\partial #2 ^{2}}}   
+\newcommand{\dto}[2]{\frac {{\textrm d} #1} {{\textrm d} #2}}   
+\newcommand{\ddto}[2]{\frac {{\textrm d}^{2} #1} {{\textrm d} #2 ^{2}}}
+\newcommand{\mytensor}[1]{\accentset{=}{#1}} % needs \usepackage{accents}
+
+\newcommand{\exofacile}{$^\star$}
+%\newcommand{\exonormal}{$^\star$$^\star$}
+\newcommand{\exonormal}{$^\star$}
+%\newcommand{\exodifficile}{$^\star$$^\star$$^\star$}
+\newcommand{\exodifficile}{$^\star$$^\star$}
+
+
+\newcommand{\Archives}[1]{}
+\newcommand{\comment}[1]{}
+
+\newcommand{\rep}[1]{}
+
+\graphicspath{{Figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}                                          
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+\noindent
+\textsc{Universit\'e Toulouse 3 -- Paul Sabatier \hfill Ann\'ee universitaire 2017-2018}
+\\
+\textsc{L3 M\'ecanique \hfill M\'ecanique des fluides}
+
+\vspace{1cm}
+
+\begin{center}
+  \setlength{\unitlength}{1mm}
+  \hrule height 1mm
+  \vspace{6mm}
+  \textbf{\LARGE Exercices et probl\`emes -- 1ère partie}
+  \\ \vspace{5mm}
+  \hrule height 1mm
+  \vspace{2cm}
+  \includegraphics[width=10cm]{bernoulli}
+\end{center}
+
+\vfill
+
+\begin{flushright}
+  \large{\textsl{Equipe p\'edagogique : \\
+      D. Fabre, M. Zagzoule}}
+\end{flushright}
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{TD_AnalyseDimensionnelle}
+\include{TD_Hydrostatique}
+\include{TD_Cinematique}
+\include{TD_Viscosite1}
+\include{TD_Viscosite2}
+\include{TD_Viscosite3}
+\appendix
+\include{TD_RevisionsPart1}
+%\include{TD_Annexes}
+
+
+
+\end{document}
+
+
+
+
+

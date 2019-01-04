@@ -1,0 +1,205 @@
+% !TEX root = TD_fluides_part2_2018.tex
+
+
+\setcounter{section}{10}
+
+
+\section{Ecoulements compressibles}
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Limite de l'hypoth\`ese incompressible}
+%--------------------------------------------------------------------------------------------------
+
+Un tube de Pitot double est plac\'e sur l'axe d'une canalisation de 10 cm
+de diam\`etre contenant de l'air en \'ecoulement.
+Le manom\`etre diff\'erentiel en U du tube de Pitot est rempli de mercure
+de masse volumique $\rho_{Hg}$ = 13 600 kg.m$^{-3}$.
+\begin{enumerate}
+\item
+Quel est le d\'ebit d'air obtenu dans l'hypoth\`ese d'un \'ecoulement
+incompressible sachant que la d\'enivellation $\Delta h$ du mercure est
+de 10 mm ?
+\item
+En consid\'erant que les effets de compressibilit\'e peuvent \^etre
+n\'eglig\'ees pour des fluctuations de masse volumique de l'air $\rho$
+inf\'erieures \`a 1\%,
+jusqu'\`a quel nombre de Mach l'\'ecoulement peut \^etre consid\'er\'e
+comme incompressible~?
+Quelle est alors l'erreur commise sur l'\'evaluation de la vitesse ?
+\end{enumerate}
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Vol subsonique}
+%--------------------------------------------------------------------------------------------------
+
+Un avion vole \`a un nombre de Mach de 0.95 \`a une altitude o\`u la pression
+atmosph\'erique est \'egale \`a 0.223 bar et o\`u la masse volumique de l'air
+est $\rho=0.349$ kg.m$^{-3}$.
+On suppose que l'air se comporte comme un fluide parfait et que les filets
+fluides sont thermiquement isol\'es.
+\begin{enumerate}
+\item
+Calculer la vitesse de l'avion en km/h.
+\item
+Calculer la pression et la temp\'erature au point d'arr\^et sur le bord
+d'attaque de l'aile.
+\end{enumerate}
+ 
+%--------------------------------------------------------------------------------------------------
+\subsection{Ecoulement isentropique}
+%--------------------------------------------------------------------------------------------------
+
+Dans un turbo-r\'eacteur, les gaz entrent dans la tuy\`ere \`a la vitesse
+de 275 m.s$^{-1}$ et \`a une temp\'erature de 741 $^o$C.
+Leur vitesse de sortie est de 564 m.s$^{-1}$.
+En supposant le fluide parfait et l'\'ecoulement isentropique, calculer
+\begin{enumerate}
+\item
+la temp\'erature de sortie des gaz,
+\item
+le nombre de Mach dans les conditions d'\'ejection des gaz.
+\end{enumerate}
+On assimilera les gaz \`a de l'air pur ($C_p = 1000$ J.kg$^{-1}$.K$^{-1}$).
+
+%--------------------------------------------------------------------------------------------------
+\subsection{R\'egimes isentropiques dans une tuyère}
+%--------------------------------------------------------------------------------------------------
+
+On consid\`ere dans ce probl\`eme l'\'ecoulement isentropique
+d'un gaz parfait dans une tuy\`ere
+intercal\'ee entre un r\'eservoir \`a air comprim\'e et l'atmosph\`ere
+\`a pression $P_a = 1$ atm.
+On assimilera le gaz \`a de l'air pur ($\gamma = 1.405$, 
+$r=287$ J/kg/K).
+La section de sortie a un diam\`etre $D_s = 5$ cm.
+
+\begin{enumerate}
+\setcounter{enumi}{0}
+\item[]
+\textbf{R\'egime 1 :}
+\item[]
+Dans ce r\'egime, la vitesse du gaz au niveau du col de la tuy\`ere
+est $u_c = 250$ m/s.
+La temp\'erature dans le r\'eservoir est $T_i = 300$ K.
+\item
+Calculer la temp\'erature au col $T_c$
+puis le nombre de Mach au col $M_c$.
+\item
+En d\'eduire la nature (subsonique, supersonique ou sonique)
+de l'\'ecoulement dans le convergent, au col et dans le divergent.
+\item
+\label{it:T_ext}
+Par continuit\'e, la temp\'erature en sortie de la tuy\`ere est \'egale
+\`a la temp\'erature ext\'erieure ambiante $T_s = T_a = 296$ K.
+Calculer le nombre de Mach $M_s$ dans la section de sortie.
+\item
+\label{it:P_ext}
+De la m\^eme fa\c{c}on, la pression en sortie de tuy\`ere $P_s$ correspond
+\`a la pression atmosph\'erique $P_a$.
+En d\'eduire la pression g\'en\'eratrice $P_i$ dans le r\'eservoir
+puis la masse volumique g\'en\'eratrice $\rho_i$.
+\item
+Calculer la vitesse en sortie $u_s$ et la masse volumique en sortie $\rho_s$
+puis en d\'eduire le d\'ebit massique $\dot{m}$ de la tuy\`ere.
+\item[]
+\textbf{R\'egime 2 :}
+\item[]
+Dans cette partie, la pression $P_i$ dans le r\'eservoir est augment\'ee
+jusqu'\`a ce que le nombre de Mach en sortie atteigne $M_s = 1.5$.
+Pour ce r\'egime, on observe ni onde de choc ni onde de d\'etente~:
+la tuy\`ere est dite \textit{adapt\'ee}.
+\item
+D\'eterminer la nature (subsonique, supersonique ou sonique)
+de l'\'ecoulement dans le convergent, au col et dans le divergent.
+\item
+Les conditions thermodynamiques en sortie de tuy\`ere sont les m\^emes
+que dans les questions \ref{it:T_ext} et \ref{it:P_ext}.
+En d\'eduire la pression g\'en\'eratrice $P_i$ et la temp\'erature
+g\'en\'eratrice $T_i$ r\'egnant dans le r\'eservoir \`a air comprim\'e.
+\item
+	Calculer la temp\'erature au col $T_c$.
+\item
+	Calculer le diam\`etre de la section au col $D_c$.
+\item
+	Calculer le d\'ebit massique $\dot{m}$ pour ce r\'egime de fonctionnement de la tuy\`ere.
+\end{enumerate}
+
+%==================================================================================================
+%\section{Ondes de choc}
+%==================================================================================================
+
+\setcounter{section}{11}
+
+\section{Ondes de choc}
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{Tube de Pitot en \'ecoulement supersonique}
+%--------------------------------------------------------------------------------------------------
+
+On considère un \'ecoulement supersonique uniforme dont on cherche à mesurer les caract\'eristiques
+(vitesse $u_1$, nombre de Mach $M_1$, pression $p_1$, pression g\'en\'eratrice $p_{i1}$) 
+à l'aide d'un tube de Pitot double.
+\begin{enumerate}
+\item
+D\'ecrire qualitativement l'\'ecoulement dans le voisinage du tube de Pitot.
+\item
+D\'eterminer l'expression du nombre de Mach $M_2$ au niveau du tube de Pitot en fonction
+des pressions $p_2$ et $p_{i2}$ mesur\'ees par le tube de Pitot.
+\item
+En d\'eduire $M_1$.
+\item
+D\'eterminer $p_1$ et $p_{i1}$.
+\item
+Expliquer comment il serait possible de pr\'edire la vitesse $u_1$ de l'\'ecoulement incident. 
+\end{enumerate}
+ 
+%--------------------------------------------------------------------------------------------------
+\subsection{R\'egime d'\'ecoulement discontinu dans une tuyère}
+%--------------------------------------------------------------------------------------------------
+
+On considère un \'ecoulement dans une tuyère caract\'eris\'e par la pr\'esence d'une onde de choc.
+On souhaite d\'ecrire ce r\'egime particulier de fonctionnement de la tuyère.   
+\begin{enumerate}
+\item
+Pr\'eciser dans quelle partie de la tuyère se trouve cette onde de choc.
+Peut-il exister une autre onde de choc dans la tuyère ?
+\item
+Donner le nombre de Mach au col $M_c$.
+\item
+Tracer pour un tel r\'egime l'allure de la vitesse, de la pression et du nombre de Mach
+le long de la tuyère.
+\item
+Que devient l'onde de choc lorsque la pression en sortie $p_s$ diminue ?
+\item 
+D\'eterminer en fonction des conditions g\'en\'eratrices en amont la plage
+de pression $p_s$ correspondant à ce r\'egime d'\'ecoulement discontinu dans la tuyère.
+\end{enumerate}
+ 
+%--------------------------------------------------------------------------------------------------
+\subsection{Onde de choc dans une tuyère}
+%--------------------------------------------------------------------------------------------------
+
+Une tuyère convergente-divergente est aliment\'ee avec de l'air à pression
+g\'en\'eratrice $p_i$ de 3 bars et une temp\'erature $T_i$ de 600 K.
+Cette tuyère a une section d'entr\'ee $A_e$ de 5 cm$^2$ dans laquelle la vitesse
+$u_e$ a pour valeur 146 m.s$^{-1}$.
+On constate lors du fonctionnement la pr\'esence d'une onde de choc dans
+la section $A\indice{choc}$ d'aire 2.53 cm$^2$.
+L'objectif de cet exercice est d'utiliser les relations isentropiques et de saut afin
+de d\'eterminer certaines caract\'eristiques de l'\'ecoulement \'etudi\'e.
+\begin{enumerate}
+\item
+  Calculer la pression $p_c$, la temp\'erature $T_c$ et la masse volumique $\rho_c$ au col ainsi
+  que le d\'ebit massique $\dot{m}$ de la tuyère.
+\item
+  Calculer les pressions $p_1$ et $p_2$ et les temp\'eratures $T_1$ et $T_2$
+  imm\'ediatement en amont et en aval de l'onde de choc.
+\item
+  Calculer la pression $p_s$ et la temp\'erature $T_s$ dans la section de sortie $A_s$ d'aire
+  2.70 cm$^2$.
+\end{enumerate}
+
+ 
+

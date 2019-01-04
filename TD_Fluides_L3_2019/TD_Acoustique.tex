@@ -1,0 +1,201 @@
+% !TEX root = TD_fluides_part2_2018.tex
+
+%==================================================================================================
+\section{Acoustique}
+%==================================================================================================
+
+\setcounter{subsection}{-1}
+ 
+ \subsection{Transmission et réflexion}
+
+{\em exercice préparatoire ; correction sur moodle}
+
+On étudie la transmission et la réflexion d'une onde sonore entre un milieu (1) de masse volumique $\rho_1$ et vitesse du son $c_1$ occupant le demi-espace $x<0$ et un milieu (2) de masse volumique $\rho_2$ et vitesse du son $c_2$ occupant le demi-espace $x>0$.
+
+Une source sonore située dans le milieu (1) et loin de la surface produit une onde progressive monochromatique de la forme $p_+(x,t) = A \cos ( \omega (t-x/c_1)) $. Une partie de l'énergie de l'onde se réfléchit, et une partie est transmise.
+
+\begin{enumerate}
+
+\item 
+Justifiez qu'il est légitime de chercher une solution de la forme 
+$$
+p'(x,t) = A \cos ( \omega (t-x/c_1)) + B \cos ( \omega (t+x/c_1)) \mbox{ pour } x<0 ;
+$$
+$$
+p'(x,t) = C \cos ( \omega (t-x/c_2)) \mbox{ pour } x>0.
+$$
+
+\item Donnez la forme du champ de vitesse $u(x,t)$ correspondant.
+
+\item En écrivant la continuité des vitesses et des pressions en $x=0$, calculez le coefficient de réflexion en amplitude $B/A$ et le coefficient de transmission en amplitude $C/A$.
+
+\item En déduire que le coefficient de transmission en intensité acoustique vaut :
+
+$$ 
+T_i = \frac{4 \rho_1 c_1 \rho_2 c_2}{(\rho_1 c_1+\rho_2 c_2)^2}
+$$
+
+\item Application : calculez le coefficient de transmission entre l'eau et l'air.
+
+\end{enumerate}
+
+
+ 
+  
+ \subsection{Acoustique des instruments à vent}
+
+Les instruments à vent employés dans l'orchestre sont classiquement regroupés en famille des bois et cuivre selon le mode l'excitation du tuyau par le souffle du musicien (embouchure pour les cuivres, anches ou biseau pour les vents). Cette classification "historique" n'est pas très pertinente 
+du point de vue de l'acoustique musicale. De ce point de vue, les propriétés essentielles sont :
+
+\begin{itemize}
+
+\item La forme du résonateur. De ce point de vue on distingue les instruments cylindriques (flûte, clarinette...), les instruments coniques (hautbois, saxophone, ...), et les instruments combinant une section cylindrique et une section conique (trompette, cor, trombone...). 
+\footnote{Ajoutons que la présence d'un pavillon n'est pas essentielle à la modélisation acoustique, et qu'il existe aussi des instruments à résonateur globulaire (ocarina) fonctionnant selon le principe du résonnateur de Helmholtz} 
+
+\item Le fait que le tuyau soit ouvert ou fermé en entrée et en sortie. On distingue les instruments ouvert-ouvert (flûte traversière, flûte à bec, tuyaux d'orgue), les instruments ouverts-fermés 
+(flûtes de pan) et les instruments fermés-ouverts (tous les instruments à anche ou à embouchure pour lesquels le bec se comporte comme une extrémité fermée).
+
+\end{itemize}
+
+\subsubsection*{A. La Flûte}
+
+On modélise une flûte traversière par un cylindre de longueur $L$ et de rayon $a$, supposé ouvert à ses deux extrémités.
+
+\begin{enumerate}
+\item 
+Rappelez l'équation de Helmholtz gouvernant la pression acoustique $p'(x,t)$, et la relation entre la pression acoustique et le débit massique $q(x,t)$.
+
+%\item Quelle condition limite faut-il appliquer sur la pression et sur le débit sur une extrémité fermée ?
+
+\item Donnez les conditions limites est vérifiées par $p'$ et $q$ en $x=0$ et $x=L$, en 
+supposant qu'aux deux extrémités la pression est égale à la pression atmosphérique (hypothèse d'extrémité {\em idéalement ouverte}).
+
+\item On cherche la solution sous la forme de mode propre (ou onde stationnaire) de la forme 
+$p'(x,t) = P(x) \cos (\omega t+ \phi)$. A partir de l'équation de Helmholtz, donnez les valeurs des fréquences et tracez la forme des trois premiers modes propres. A quelles positions sont les noeuds de pression et de débit associés à ces modes ?
+
+\item On considère le mode fondamental (de fréquence la plus basse). Montrez que la structure du mode peut s'écrire sous la forme de deux ondes progressives se propageant en direction opposées. Par un raisonnement simple retrouvez la valeur de la fréquence fondamentale.
+
+\item Application : calculez la fréquence fondamentale (théorique) d'une flûte traversière de 
+longueur $66cm$ et d'une clarinette de même longueur.
+
+\item Une modélisation plus poussée de l'écoulement au voisinage des extrémités montre 
+que les noeuds de pression sont en réalité situés à une distance $\Delta = 0.85 a$ de chacune des extrémités. Calculez, en pourcentage (puis en demi-tons) la modification de fréquence due à cette correction.
+
+\end{enumerate}
+
+
+\subsubsection*{B. La clarinette}
+
+On modélise une clarinette par un cylindre de longueur $L$ et de rayon $a$, 
+supposé ouvert à la sortie mais fermé à l'entrée.
+
+\begin{enumerate}
+
+\item Donnez, dans ce cas, les conditions limites est vérifiées par $p'$ et $q$ en $x=0$ et $x=L$.
+
+\item En cherchant de nouveau la solution sous la forme de mode propre, 
+donnez les valeurs des fréquences et tracez la forme des trois premiers modes propres. A quelles positions sont les noeuds de pression et de débit associés à ces modes ?
+
+\item Comparez la fréquence fondamentale d'une clarinette à celle d'une flûte. Que constate-t-on ? 
+
+\end{enumerate}
+
+
+\subsubsection*{C. Le hautbois}
+
+Un hautbois peut être modélisé par un tuyau conique de longueur $L$, rayon en sortie $a$
+(ce qui correspond à un angle d'ouverture $\alpha = \tan^{-1}( a/L)$), supposé ouvert en sortie et (forcément) fermé en entrée (car terminé par une pointe d'épaisseur nulle...)
+
+\begin{enumerate}
+
+\item Justifiez que la pression doit être cherchée sous la forme $p'(r,t)$ où $r$ est le rayon en coordonnée sphérique.
+
+\item Donnez l'expression de l'équation de Helmholtz en coordonnées sphériques.
+
+\item On cherche de nouveau la solution sous la forme de modes propres. Montrez que ceux-ci sont de la forme $p'(r,t) = A \sin(\omega r/c )/r \cos ( \omega t)$. Quelles sont les fréquences des modes propres ? 
+
+\item Tracez, pour les 3 premiers modes, la forme de la pression $p'(x,t)$ et du 
+débit acoustique $q(r,t)$ correspondant. 
+
+\item Comparez la fréquence fondamentale d'un hautbois de longueur $L$ à celles d'une flûte et d'une clarinette de même longueur. Que constate-t-on ?
+
+\end{enumerate}
+  
+
+
+\subsubsection*{D. Le trombone$^*$}
+
+Un trombone peut être modélisé comme un cylindre de longueur $L_2$ et de rayon $a$, fermé en entrée, raccordé à un cône de même longueur $L_1$ et de rayon final $R = 5a$, ouvert en sortie (on ne tient pas compte du pavillon).
+
+\begin{enumerate}
+
+\item Donnez l'angle $\alpha$ du cône et la position théorique de la pointe de celui-ci.
+(on note $x_1$ la distance entre la pointe et le raccord entre les deux parties du tuyau).
+
+\item On suppose que dans la section cylindrique la solution prend la forme d'une onde plane ($p' = P(x) \cos \omega t $) et que dans la section conique elle prend la forme d'une onde sphérique 
+($p' = Q(r)/r \cos \omega t$). En supposant que la pression et le débit acoustique sont continus au raccord entre les deux sections du tuyau, montrez que les fréquences des modes propres
+sont solutions de l'équation suivante :
+
+$$
+\tan (k L_2) - \cot (k L_1) - \frac{1}{kx_1} = 0.
+$$
+
+\end{enumerate}
+
+\subsubsection*{E. Discussion}
+
+\begin{enumerate}
+\item Comparez la fréquence fondamentale d'un hautbois de longueur $L$ à celles d'une flûte et d'une clarinette de même longueur. Que constate-t-on ?
+
+\item Pour des raisons musicales, un instrument de musique a un son harmonieux si les fréquences des modes supérieurs (les partiels) sont multiples de la fréquence du mode fondamental. Cette relation est-elle vérifiée par les instruments considérés dans cet exercice ?
+
+
+\end{enumerate}
+
+Pour en savoir plus : {\em Acoustics of musical instruments, N. H. Fletcher \& T. D. Rossing}.
+
+
+
+%--------------------------------------------------------------------------------------------------
+\subsection{R\'esonateur de Helmholtz$^*$}
+%--------------------------------------------------------------------------------------------------
+
+En soufflant dans une bouteille, on peut lui faire \'emettre un son. 
+Or la fr\'equence de ce son est beaucoup plus basse que ce que donne le calcul simple 
+qui consid\`ere que le fond et l'ouverture de la bouteille sont respectivement un n{\oe}ud 
+et un ventre de vitesse. 
+Ainsi, un frontignan (75 centilitres) \'emet un son voisin du $la_1$ d'un piano, 
+soit 110 Hz (essayez !), alors que consid\'erer que la longueur de la bouteille correspond 
+\`a $\lambda/4$ donne environ 420 Hz. 
+Le probl\`eme g\'en\'eral est celui de la fr\'equence de r\'esonance d'une cavit\'e perc\'ee 
+d'un trou.
+
+Helmholtz a r\'esolu le probl\`eme en consid\'erant que l'air dans la cavit\'e (la bouteille) 
+se comporte comme un ressort sans masse, auquel est suspendue une  masse d'air cylindrique 
+oscillant rigidement au voisinage du trou (dans le goulot). 
+Montrer que la fr\'equence de r\'esonance est alors donn\'ee par
+$
+\omega^2 = c^2 \pi r^2 / (V_0 l),
+$
+o\`u $c$ est la vitesse du son, $V_0$ est le volume de la cavit\'e, et $l$ et $r$ la longueur 
+et le rayon de la masse oscillante. 
+Ce mod\`ele donne-t-il le bon r\'esultat pour un frontignan ($V_0$ = 750 cm$^3$, $r = 1$ cm, 
+$l = 9$ cm) ? 
+(Pour \^etre pr\'ecis, il faut prendre en compte une longueur effective de la masse oscillante, 
+somme de la longueur $l_g$ du goulot et de la correction de Rayleigh, \'egale \`a $0,6 \, r$, 
+\`a chaque extr\'emit\'e du goulot. 
+Une autre complication, plus difficile \`a prendre en compte, provient du fait qu'un frontignan 
+n'est pas exactement constitu\'e de deux cylindres.) 
+
+Le mod\`ele de Helmholtz peut \^etre justifi\'e par un bilan de masse dans la cavit\'e 
+(o\`u la masse volumique peut \^etre suppos\'ee uniforme puisque la longueur de la cavit\'e 
+est petite devant la longueur d'onde), et par un bilan de quantit\'e de mouvement dans le goulot 
+(o\`u la vitesse peut \^etre suppos\'ee uniforme pour la m\^eme raison). 
+Montrer que ces deux \'equations donnent l'\'equation d'un oscillateur harmonique pour 
+les variations de masse volumique dans la cavit\'e, dont la pulsation propre est donn\'ee 
+par l'\'equation ci-dessus.
+
+
+
+
+

@@ -1,0 +1,89 @@
+\select@language {french}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {A}Propri\IeC {\'e}t\IeC {\'e}s physiques des fluides les plus courants}{2}
+\thispagestyle {empty}
+\contentsline {subsubsection}{\numberline {A.0.1}ANNEXE : Equation d'\IeC {\'e}tat de l'eau de mer (IES80)}{2}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {B}Tableau des principaux nombres sans dimensions}{3}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {C}Equations-bilan sous forme locale et int\IeC {\'e}grale}{4}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {C.1}Bilan de masse}{4}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {C.2}Bilan de quantit\IeC {\'e} de mouvement}{4}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme int\IeC {\'e}grale}{4}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {C.3}Bilan d'\IeC {\'e}nergie cin\IeC {\'e}tique}{4}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme locale 1}{4}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme locale 2}{4}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme int\IeC {\'e}grale}{4}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {C.4}Bilan d'\IeC {\'e}nergie (1er principe)}{5}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme int\IeC {\'e}grale 1}{5}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme int\IeC {\'e}grale 2 (1er principe en syst\IeC {\`e}me ouvert)}{5}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {C.5}Bilan d'\IeC {\'e}nergie interne}{5}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme locale}{5}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme int\IeC {\'e}grale}{5}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {C.6}Bilan d'entropie}{5}
+\thispagestyle {empty}
+\contentsline {paragraph}{Forme int\IeC {\'e}grale (second principe en syst\IeC {\`e}me ouvert)}{5}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {D}Op\IeC {\'e}rateurs diff\IeC {\'e}rentiels et \IeC {\'e}quations de Navier-Stokes incompressibles dans les principaux syst\IeC {\`e}mes de coordonn\IeC {\'e}e}{6}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {D.1}Coordonn\'ees cart\'esiennes $(x,y,z)$}{6}
+\thispagestyle {empty}
+\contentsline {paragraph}{Divergence}{6}
+\thispagestyle {empty}
+\contentsline {paragraph}{Vorticit\IeC {\'e}}{6}
+\thispagestyle {empty}
+\contentsline {paragraph}{Tenseur des contraintes}{6}
+\thispagestyle {empty}
+\contentsline {paragraph}{Equations de Navier-Stokes (\IeC {\'e}coulement incompressible)}{6}
+\thispagestyle {empty}
+\contentsline {paragraph}{Fonction de courant $\psi $ }{6}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {D.2}Coordonn\'ees cylindriques ($r,\theta ,z$)}{7}
+\thispagestyle {empty}
+\contentsline {paragraph}{Op\IeC {\'e}rateurs diff\IeC {\'e}rentiels}{7}
+\thispagestyle {empty}
+\contentsline {paragraph}{Equations de Navier-Stokes (\IeC {\'e}coulement incompressible)}{7}
+\thispagestyle {empty}
+\contentsline {paragraph}{Fonction de courant $\psi $}{7}
+\thispagestyle {empty}
+\contentsline {paragraph}{Fonction de Stokes $\Psi $}{7}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {D.3}Coordonn\IeC {\'e}es sph\IeC {\'e}riques $(R,\Theta ,\phi )$}{8}
+\thispagestyle {empty}
+\contentsline {paragraph}{Ecoulement incompressible}{8}
+\thispagestyle {empty}
+\contentsline {paragraph}{Equation de Navier-Stokes :}{8}
+\thispagestyle {empty}
+\contentsline {paragraph}{Gradient des vitesses et tenseur des contraintes}{8}
+\thispagestyle {empty}
+\contentsline {paragraph}{Fonction de Stokes $\Psi $}{8}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {E}Quelques formules d'analyse vectorielle et tensorielle}{9}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {E.1} Formules de d\IeC {\'e}rivation d'un produit (g\IeC {\'e}n\IeC {\'e}ralisations de $(fg)' = f'g + fg'$) :}{9}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {E.2}Formules de d\IeC {\'e}riv\IeC {\'e}e seconde (g\IeC {\'e}n\IeC {\'e}ralisations de $(f')' = f''$) :}{9}
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {E.3} Formules d'int\IeC {\'e}gration (g\IeC {\'e}n\IeC {\'e}ralisations de $\DOTSI \intop \ilimits@ _a^b f'(x) dx = f(b) - f(a)$) :}{9}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {F}Quelques solutions exactes}{10}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {G}Pertes de charges et Diagramme de Moody}{11}
+\thispagestyle {empty}
+\contentsline {section}{C. Ecoulement compressible isentropique de gaz parfait}{11}
+\thispagestyle {empty}
+\contentsline {section}{D. Relations de saut a travers un choc droit}{14}

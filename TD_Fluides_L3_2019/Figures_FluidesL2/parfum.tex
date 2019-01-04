@@ -1,0 +1,77 @@
+\documentclass[12pt,a4]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc} 
+
+\usepackage{floatflt,fancyheadings,amssymb,color}
+\usepackage{psfig,epsfig}
+\usepackage{pictex}
+\usepackage{charter}
+\hoffset=-4cm 
+\voffset=-4cm
+\topmargin=15mm
+\headheight=5mm
+\headsep=15mm
+\textheight=260mm
+\oddsidemargin=30mm
+\evensidemargin=30mm
+\textwidth=170mm
+\pagestyle{plain}
+\renewcommand{\textfraction}{.10}
+\newcommand{\derp}[2]{ \frac{ \partial #1 }{ \partial #2}}
+\newcommand{\dsp} {\displaystyle}
+\newcommand{\torseur}[4]{
+\Biggl\{ {\cal #1} (#2)\Biggr \} = 
+\left \{ \begin{array}{c}
+#3  \\
+#4 
+\end{array} \right\} 
+}
+    
+    
+
+\begin{document}
+\sf 
+
+
+\begin{center}
+  Licence II mathématiques \& Mécanique, Universit\'e Paul Sabatier.
+ \vspace{0.6cm}
+ 
+Thème 4 (suite)
+
+ {\bf \Large Le diffuseur de parfum }
+
+
+\input{parfum.pstex_t}
+
+\end{center}
+
+
+Le dispositif représenté sur la figure est utilisé pour diffuser du parfum.
+Un courrant d'air, de débit volumique $q$ constant, circule dans un conduit
+présentant un rétrécissement. Un tuyau, raccordé au récipient contenant le 
+parfum, est disposé au col. Si le débit d'air est suffisant, le parfum
+est aspiré dans le tuyau, et circule avec un débit volumique $q_l$.
+On suppose le débit volumique du parfum faible devant celui de l'air,
+de sorte que le débit volumique en sortie est $q+q_l \approx q$.
+
+On note $\rho_a$ et $\rho_l$ les masses volumiques de l'air et du liquide,
+$S$ et $S_c$ les sections en entrée et au col, et $\Delta h$ la hauteur entre
+la surface du liquide dans le récipient et la sortie du tuyau.
+
+1/ Montrez qu'un débit d'air minimal est nécessaire pour que le parfum
+soit diffusé.
+Lorsque le débit d'air est inférieur à cette valeur, donnez la hauteur atteinte
+dans le tube par le parfum.
+
+2/ Lorsque le débit d'air est supérieur à la valeur critique, calculez
+le débit volumique de parfum diffusé.
+
+3/ Représentez la fraction volumique de parfum, $q_l/q$, en fonction de $q$.
+
+
+
+Remarque : Un dispositif du même type est utilisé dans certains carburateurs
+(mais ca sent moins bon).
+
+\end{document}

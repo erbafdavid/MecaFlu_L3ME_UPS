@@ -1,0 +1,499 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt, a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--------------------------------------------------------------------------------------------------
+% Dimensions :
+%--------------------------------------------------------------------------------------------------
+
+\setlength{\textheight}{26cm}
+\setlength{\textwidth}{16cm}
+
+\setlength{\topmargin}{-25mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+
+% \setlength{\columnsep}{20mm}
+
+\setlength{\fboxsep}{1mm}
+\setlength{\unitlength}{1mm}
+
+%--------------------------------------------------------------------------------------------------
+% Packages :
+%--------------------------------------------------------------------------------------------------
+
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+
+\usepackage[french]{babel}    % pour franciser le document
+
+%\usepackage[latin1]{inputenc} % pour utiliser les caracteres accentues du claviers
+\usepackage[utf8]{inputenc} 
+
+\usepackage{accents}
+
+\input{../mymacros.tex}
+
+%--------------------------------------------------------------------------------------------------
+% Divers :
+%--------------------------------------------------------------------------------------------------
+
+\definecolor{rougefonce}{rgb}{0.7, 0.2, 0.2}
+
+\renewcommand{\thickline}[2]{\linethickness{#1} \line(1, 0){#2}}
+\renewcommand{\mycaption}[1]{\caption{\sl #1}}
+\renewcommand{\myvec}[1]{\vec{#1}}
+
+\newcommand{\footnoteremember}[2]{
+\footnote{#2}
+\newcounter{#1}
+\setcounter{#1}{\value{footnote}}% \!\!\!
+}
+\newcommand{\footnoterecall}[1]{
+\footnotemark[\value{#1}]
+}
+
+\newcommand{\question}[1]{}
+\newcommand{\answer}[1]{#1}
+
+% \pagestyle{empty}
+
+\graphicspath{{../FIGURES/}{Figures/}} % chemin d'acces au repertoire des figures (par ex.)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+
+  \textsc{Université Toulouse 3 -- Paul Sabatier \hfill Année universitaire 2017-2018}
+  
+  \textsc{Mécanique des fluides \hfill L3 Mécanique}
+  
+  \vspace{0mm}
+  
+  \begin{center}
+    \thickline{0.4mm}{160}
+    \\ \vspace{3mm}
+  \textbf{\large Exercice complémentaire 10 : 
+  \\
+  Réflexion/transmission d'une onde acoustique;  \\
+  Application au fonctionnement de l'oreille moyenne\\
+  {\em Eléments de correction}
+  }
+    \\ %\vspace{1mm}
+    \thickline{0.4mm}{160}
+  \end{center}
+
+  %\vspace{5mm}
+  
+\end{center}
+
+\section{Description d'une onde acoustique monodimensionnelle}
+
+ 
+\begin{enumerate}
+\item 
+\question{Rappelez les hypothèses de l'acoustique linéaire. Montrez que sous ces hypothèses, l'évolution de la pression est gouvernée par l'équation de Helmholtz :
+$$
+\frac{\partial^2 p'}{\partial t^2} = c_0^2 \nabla^2 p'
+$$
+Définir $c_0$ dans le cas général, puis dans le cas d'un gaz parfait.
+}
+\answer{(Voir notes de cours)}
+
+\item \question{
+On considère une solution d'onde plane progressive monochromatique se déplaçant dans la direction $+\vec{e}_x$, sous la  forme suivante :
+$$
+p'(x,t) = Re (A e^{i (k x - \omega t)})
+$$
+Représentez la forme d'une telle onde à différents instants. 
+
+A quoi correspondent les quantités $A$, $k$ et $\omega$ ? Quelle relation relie ces deux dernières quantités ?}
+\answer{
+Cette forme d'onde s'écrit aussi, en posant $A= |A| e^{i \varphi_A}$:
+$$
+p'(x,t) =|A| \cos (k x - \omega t+ \varphi_A)) 
+$$
+$k$ est le nombre d'onde relié à la longeur d'onde par $k = 2\pi/\lambda$ ; $\omega$ est la pulsation reliée à la période par $\omega = 2\pi/T$;
+$\varphi_A$ est la phase de l'onde qui peut être choisie arbitrairement à zéro (en définissant convenablement l'origine des temps). 
+
+Les dérivées seconde en temps et en espace s'écrivent respectivement : 
+$$
+\frac{\partial^2 p'}{\partial t^2} =- \omega^2 |A| \cos (k x - \omega t+ \varphi_A))   ; 
+\qquad  \nabla^2 p' =  \frac{\partial^2 p'}{\partial x^2} =-k^2 |A| \cos (k x - \omega t+ \varphi_A)).
+$$
+En reportant dans l'équation des ondes et en simplifiant on obtient :
+$$
+\omega^2 = c_0^2 k^2
+$$ 
+si $k>0$ et $\omega>0$ on a donc $\omega = c_0 k$. C'est la "relation de dispersion".
+
+On peut remarquer en outre que cette forme d'onde se met sous la forme :
+$$p'(x,t) =|A| \cos (k (x -c_0 t) + \varphi_A) = f(x-c_0 t)$$
+C'est donc bien une onde progressive se propageant à la vitesse $+c_0$.
+}
+
+
+\item 
+\question{A partir des équations du mouvement, donnez la loi de vitesse $u'(x,t)$ correspondant à une telle onde.}
+\answer{
+En reportant (par exemple) dans l'équation de la quantité de mouvement, on a :
+$$
+\frac{\partial u'}{\partial t} =- \frac{1}{\rho_0} \frac{\partial p'}{\partial x} = - \frac{k |A|}{\rho_0} \sin (k x - \omega t+ \varphi_A)) 
+$$ 
+En intégrant par rapport au temps on a :
+$$
+\partial u'  = + \frac{k |A|}{\rho_0 \omega } \cos (k x - \omega t+ \varphi_A) = \frac{p'}{\rho_0 c_0}.
+$$ 
+(la constante d'intégration est ici prise égale à zéro car la moyenne en temps de $u'$, qui est par définition une perturbation de vitesse par rapport à un état au repos, est nulle).
+
+Remarque : on peut aussi procéder de même a partir de l'équation de la masse ce qui conduit à la même relation.
+}
+
+\item 
+\question{Définir l'énergie acoustique volumique $e_{ac}$ et le vecteur intensité acoustique $\vec{I}$. }
+\answer{D'après le cours :
+$$
+e_{ac} = \frac{|p'|}{2 \rho c_0^2} +  \frac{\rho_0 |u'|}{2} = 
+\frac{|A|^2  \cos^2 (k x - \omega t+ \varphi_A)) }{2 \rho_0 c_0^2}  
++ \frac{|A|^2  \cos^2 (k x - \omega t+ \varphi_A) }{2 \rho_0 c_0^2}
+= 
+\frac{|A|^2  \cos^2 (k x - \omega t+ \varphi_A) }{\rho_0 c_0^2} ; 
+$$
+$$
+\vec{I} = p' \vec{u}' =  p' u'  \vec{e}_x = 
+\frac{|A|^2  \cos^2 (k x - \omega t+ \varphi_A) }{\rho_0 c_0} \vec e_x  = c_0 e_{ac}  \vec{e}_x.
+$$
+}
+
+
+
+\item \question{Montrez que dans le cas considéré ici, la valeur moyenne de ces quantités (au sens de la moyenne temporelle sur une période d'oscillation) sont données respectivement par :
+ 
+$$
+\overline{e_{ac}} = \frac{|A|^2}{2 \rho_0 c_0 ^2} ; \qquad \overline{I_x} = c_0  \overline{e_{ac}} 
+$$
+}
+\answer{ En notant que $\overline{\cos^2 (k x - \omega t+ \varphi_A)} = 1/2$, on obtient directement le résultat demandé :
+$$
+\overline{e_{ac}} = \frac{|A|^2}{2 \rho_0 c_0 ^2} ; \qquad \overline{I_x} = c_0  \overline{e_{ac}} 
+$$
+où $I_x$ dénote l'intensité acoustique algébrique dans la direction $x$ (projection du vecteur intensité acoustique dans la direction $\vec{e}_x$).
+}
+
+
+\item 
+\question{Comment faut-il modifier les relations données aux questions 2, 3 et 5 pour décrire une onde plane progressive monochromatique d'amplitude $B$ se déplaçant dans la direction $-\vec{e}_x$? }
+\answer{
+On peut partir d'une expression sous la forme 
+$$
+p'(x,t) = B e^{i(-k x - \omega t)} =   |B| \cos (-k x - \omega t+ \varphi_B) =  |B| \cos (-k( x + c_0 t)+ \varphi_B) 
+$$
+qui est bien de la forme $p'(x,t) = g(x+c_0 t)$.
+Dans ce cas la perturbation de vitesse associée est 
+$$u'(x,t) = -\frac{|B|\cos (-k( x + c_0 t)+ \varphi_B)}{\rho_0 c_ 0} =  -\frac{p'(x,t)}{\rho_0 c_ 0}.$$
+La densité d'énergie moyenne et le flux d'énergie moyen sont alors :
+$$
+\overline{e_{ac}} = \frac{|B|^2}{2 \rho_0 c_0 ^2} ; \qquad \overline{I_x} = - c_0  \overline{e_{ac}} 
+$$
+}
+
+\question{
+\item {\em Question supplémentaire*}.
+On reprend l'étude dans le cas d'un {\em solide élastique} de propriétés mécaniques $E$ (module d'Young), $\nu$ (coefficient de Poisson), $\rho_0$ (masse volumique).
+
+Montrez qu'un milieu infini permet la propagation d'{\em ondes de compression} (qui généralisent les ondes acoustiques) avec une vitesse donnée par 
+$$
+c_l^2 = \frac{E(1-\nu)}{\rho (1+\nu)(1- 2 \nu)}.
+$$
+}
+
+\section{Réflexion/transmission d'une onde acoustique}
+
+
+\question{
+On étudie la propagation d'ondes acoustiques dans un milieu composé de deux demi-espaces occupés par des fluides\footnote{Le cas ou l'un des milieux (ou les 2) est un solide élastique se traite de la même façon en remplaçant $c$ par $c_l$} de propriétés moyennes différentes, c'est-à-dire :
+$$
+(x<0 ) : \quad \rho_0 = \rho_1 ; c_0 = c_1 ; \quad \qquad (x>0 ) : \quad  \rho_0 = \rho_2 ; c_0 = c_2
+$$
+%On considère des ondes monodimensionelles de la forme : 
+%$p' = p'(x,t)$ et $\vec{u'} = u'(x,t) \vec{e}_x$.
+
+Dans les applications numériques, on considèrera que le milieu $1$ est de l'air ($\rho_1 = 1.225 kg/m^3 ; c_1 = 340 m/s$) et que le milieu $2$ est de l'eau 
+($\rho_2 = 1000 kg/m^3 ; c_2 = 1500 m/s$).
+}
+\setcounter{enumi}{7}
+ \item 
+ \question{
+On suppose que le champ de pression est donné par une loi de la forme suivante (ou il est sous-entendu qu'il convient de ne retenir que la partie réelle des quantités complexes) :
+\begin{equation}
+p'(x,t) = \left\{ \begin{array}{ll} 
+A e^{i (k_1 x - \omega t)} + B e^{i (-k_1 x - \omega t)} & \quad ( \mbox{ pour }  x<0) \\
+C e^{i (k_2 x - \omega t)} & \quad ( \mbox{ pour }  x>0) 
+\end{array}
+\right.
+\label{eq:ABC}
+\end{equation}
+
+Comment peut-on qualifier les 3 ondes d'amplitudes $A$, $B$, $C$ apparaissant dans cette expression ? Quelle est l'interprétation physique de cette situation ?
+}
+\answer{
+\begin{equation}
+p'(x,t) = \left\{ \begin{array}{ll} 
+A e^{i (k_1 x - \omega t)} + B e^{i (-k_1 x - \omega t)} & \quad ( \mbox{ pour }  x<0) \\
+C e^{i (k_2 x - \omega t)} & \quad ( \mbox{ pour }  x>0) 
+\end{array}
+\right.
+\label{eq:ABC}
+\end{equation}
+Du coté $x<0$ on a la superposition d'une onde simple d'amplitude $A$ se propageant à la vitesse $+k_1/\omega$ {\em (onde incidente)} et d'une onde simple d'amplitude $B$ se propageant à la vitesse $-k_1/\omega$ {\em (onde réfléchie)}.
+Du coté $x>0$ on a reconnait une onde simple d'amplitude $B$ se propageant à la vitesse $+k_2/\omega$ {\em (onde transmise)} .
+}
+
+\item 
+\question{
+Quel est l'expression des paramètres $k_1$ et $k_2$ en fonction de la fréquence $\omega$ et des propriétés des milieux correspondants ?
+
+Application numérique : donnez la valeur de $k_1$ et $k_2$ ainsi que les longueurs d'ondes associées $\lambda_1$, $\lambda_2$ pour une fréquence $\omega = 2 \pi f $ avec $f = 440 Hz$ (fréquence de la note de référence $la_4$ pour les instruments de musique) pour une transmission entre l'air et l'eau. 
+}
+\answer{
+On peut noter tout d'abord que la pulsation $\omega$ est la même pour les 3 ondes considérées. Normal car on étudie un problème en régime harmonique en temps. La vitesse des ondes étant différente dans les 2 milieux, les nombre d'ondes sont donnés par 
+$k_1 = \omega/c_1$ et $k_2=/\omega / c_2$.
+
+Application numérique avec les données du problème :
+$$
+k_1 = 8.13 rad/m; \quad k_2 = 1.843 rad/m; \quad \lambda_1 = 0.773 m ; \quad \lambda_2 = 3.4 m$$
+}
+
+
+
+
+
+
+\item
+\question{
+A partir des équations du mouvement, donnez l'expression du champ de vitesse $u'(x,t)$ (respectivement pour $x<0$ et pour $x>0$) .
+}
+\answer{
+En reprenant la démarche de la première partie et en l'adaptant à la situation considérée ici, on aboutit à :
+\begin{equation}
+u'(x,t) = \left\{ \begin{array}{ll} 
+\frac{1}{\rho_1 c_1} \left( A e^{i (k_1 x - \omega t)} - B e^{i (-k_1 x - \omega t)} \right)& \quad ( \mbox{ pour }  x<0) \\
+\frac{1}{\rho_2 c_2} \left( C e^{i (k_2 x - \omega t)} \right) & \quad ( \mbox{ pour }  x>0) 
+\end{array}
+\right.
+\label{eq:ABCu}
+\end{equation}
+}
+
+\item 
+\question{
+Justifiez que la pression $p'$ et la vitesse $u'$ sont continues à l'interface entre les deux milieux 
+(en $x=0$). En déduire un système de 2 équations pour les 2 inconnues $B$ et $C$ ($A$ étant supposé connu).
+}
+\answer{Sous les hypothèses du milieu continu (satisfaites dans le cadre dans le cadre de l'acoustique linéaire), la pression et la vitesse sont des champs continus (et dérivables).
+On en déduit :
+\footnote{En toute rigueur, il faut tenir compte du fait que l'interface entre les deux milieux oscille autour de sa position moyenne. En notant $X'(t)$ le déplacement (lagrangien) de cette interface, celui-ci est relié à la vitesse par $d X'/dt = u'(X',t)$. Il faudrait donc écrire la condition de raccord pour la pression sous la forme $p'(X'_-,t) = p'(X'_+,t)$.  On peut faire un développement limité sous la forme $p'(0_-,t) + X' \left(\partial p'/\partial x\right)_{x=0_-} + ... =
+ =p'(0_+,t) + X' \left(\partial p'/\partial x\right)_{x=0_+} + ... $. Cependant les déplacements étant supposés faibles, on peut négliger dans ce développement tous les termes proportionnels à $X'$ (et d'ordre plus élevé), ce qui finalement aboutit à écrire la continuité de la pression en $x=0$. De même pour la vitesse.} 
+\begin{eqnarray}
+p'(0-,t) = p'(0_+,t) 
+& \Longrightarrow & A e^{-i  \omega t} + B e^{-i  \omega t} = C e^{-i  \omega t} 
+\\
+u'(0-,t) = u'(0_+,t) 
+&\Longrightarrow & 
+\frac{1}{\rho_1 c_1} \left( A e^{-i  \omega t} + B e^{-i  \omega t} \right) 
+= \frac{C}{c_2 \rho_2} e^{-i  \omega t} 
+\end{eqnarray}
+
+En simplifiant par $e^{-i\omega t}$ on arrive donc à un système de deux équations à deux inconnues :
+
+\begin{equation}
+ \left\{ 
+ \begin{array}{lcr}  A+B &=& C,\\
+ \displaystyle \frac{A-B}{\rho_1 c_1} &=& \displaystyle  \frac{C}{\rho_2 c_2}.
+ \end{array}
+\right. 
+\label{eq:ABCeqs}
+\end{equation}
+
+}
+
+
+
+
+\item 
+\question{En déduire la valeur des coefficients de réflexion et de de transmission en amplitude-pression :}
+\answer{La résolution de ce système conduit directement au résultat attendu :}
+\begin{eqnarray}
+r = \frac{B}{A} &=& \frac{\rho_2 c_2 - \rho_1 c_1}{\rho_1 c_1 + \rho_2 c_2},\\
+t = \frac{C}{A} &=& \frac{2 \rho_2 c_2}{\rho_1 c_1 + \rho_2 c_2},
+\label{eq:rt}
+\end{eqnarray}
+
+
+\item \question{Montrez que les coefficients de réflexion et de transmission en énergie ont les expressions suivantes :}
+\answer{D'après le cours et les résultats de la première partie, les flux d'énergie moyens $\overline{I}_x$ associés aux ondes incidente, réfléchie et transmise ont pour expression :
+$$
+\overline{I}_{x,A} = + \frac{|A|^2}{\rho_1 c_1} ; 
+\quad \overline{I}_{x,B} = - \frac{|B|^2}{\rho_1 c_1} ;
+\quad \overline{I}_{x,C} = + \frac{|C|^2}{\rho_2 c_2}.
+$$
+On en déduit :}
+
+\begin{eqnarray}
+R = \left| \frac{\overline{I}_{x,B}}{\overline{I}_{x,A}}  \right| &=& \left(\frac{\rho_1 c_1 - \rho_2 c_2}{\rho_1 c_1 + \rho_2 c_2}\right)^2,\\
+T =\left| \frac{\overline{I}_{x,C}}{\overline{I}_{x,A}}  \right| &=& \frac{4 \rho_1 c_1\rho_2 c_2}{(\rho_1 c_1 + \rho_2 c_2)^2}.
+\label{eq:RT}
+\end{eqnarray}
+\question{Vérifiez que $T+R = 1$. Quelle est l'interprétation physique de ce résultat ?}
+\answer{ On a bien $T+R =1$, ce qui traduit la conservation de l'énergie : le flux  d'énergie incident est égal à la somme du flux transmis et du flux réfléchi.}
+
+\item \question{Application numérique : donnez les valeurs de $t,r,T,R$ pour la transmission entre l'air et l'eau.
+Exprimez $T$ en décibels.}
+\answer{ Application numérique : on trouve 
+$r = -0.9994$, $R = 0.9989$, $t=1.9994$, $T = 0.0011$.
+On peut remarquer que $r$ est proche de $-1$ qui correspond au coefficient de réflexion sur un mur rigide (cf cours). $t$ est proche de $2$, il y a donc transmission d'une onde d'amplitude a peu près double de l'amplitude incidente, par contre le flux d'énergie associé (mesuré par $T$) est très faible.
+Mesuré en décibels, on a : 
+$$
+T_{db} = 10 \log_{10} (T) \approx -29.54 db.
+$$
+}
+
+\question{
+\item {\em Question supplémentaire*}.
+On considère maintenant, non plus un milieu infini des deux côtés de la discontinuité, mais un conduit cylindrique d'axe $\vec{e}_x$, dont la section varie brutalement entre une valeur $S_1$ (pour $x<0$) et une valeur $S_2$ (pour $x>0$). On suppose que le champ de pression reste donné par la description (\ref{eq:ABC}).
+
+On note $q'(x,t)  = u' S$ le débit de volume à travers la section du tube.
+
+\begin{enumerate}
+
+\item A partir des expressions de la question 10, donnez  l'expression de $q'(x,t)$, respectivement  pour $x<0$ et $x>0$.
+
+\item
+Montrez qu'a partir de la continuité de la pression et du débit en $x=0$ on obtient des formules qui généralisent les équations (2,3,4,5) %(\ref{eq:rt} et \ref{eq:RT}) 
+en remplaçant $\rho_1 c_1$ par $Z_1 = \rho_1 c_1/S_1$ et  $\rho_2 c_2$ par $Z_2 = \rho_2 c_2/S_2$. ({\em $Z_1$ et $Z_2$ sont les impédances spécifiques des deux portions de tube}).
+\item
+
+Donnez la valeur de $T$ (en décibels) pour $S_1 = 0.6 cm^2$ et $S_2= 0.03 cm^2$.
+
+\end{enumerate}
+}
+
+\section{Application au fonctionnement de l'oreille moyenne}
+
+\begin{figure}
+\includegraphics[width=.45\linewidth]{OreilleMoyenne.jpg}
+\includegraphics[width=.45\linewidth]{ModeleOreille.png}
+\caption{$(a)$ physiologie de l'oreille et $(b)$ Modèle mécanique simplifié des osselets de l'oreille moyenne.}
+\end{figure}
+\question{
+Le rôle de l'oreille moyenne est d'optimiser la transmission des ondes acoustiques entre un milieu aérien (le conduit auditif) et un milieu aqueux (la cochlée ou oreille interne).
+Pour cela, la solution sélectionnée par la sélection naturelle a consisté à utiliser 3 osselets constituant une sorte de levier reliant ces deux milieux. 
+La figure ci-dessus représente ce modèle mécanique de manière très schématique.
+
+On donne les dimensions des bras de levier : $d_1 = 1,3cm$, $d_2 = 1cm$, 
+ainsi que la surface du tympan $S_1 = 0.6cm^2$ et celle de la fenêtre ovale $S_2= 0.03cm^2$.
+}
+
+
+Appelons $\cal S$ le système mécanique constitué par les osselets, comme schématisé sur la figure. Notons $O$ le point pivot (supposé fixe), $M_1$ le point situé au centre du tympan,
+$M_2$ le point situé au centre de la fenêtre ovale. On introduit une base ($\vec{e}_x,\vec{e}_y;\vec{e}_z$ tel que la direction $x$ est perpendiculaire aux surfaces du tympan et de la fenêtre ovale (direction verticale sur la figure), et la direction $y$ est alignée avec les leviers (direction horizontale sur la figure). 
+ 
+ \setcounter{enumi}{15}
+\item 
+\question{Donnez la relation cinématique entre $u_1$ et $u_2$ (vitesses au niveau du tympan et de la fenêtre ovale).}
+
+\answer{
+Le solide a un mouvement de corps rigide avec un vecteur rotation $\vec {\Omega}$. Les vitesses des points $M_1$ et $M_2$ s'en déduisent par (avec les notations classiques de mécanique des solides) : 
+
+$$
+\vec{V}_{M_1 \in {\cal S}} = \vec{\Omega} \wedge \vec{OM_1} ; \quad \vec{V}_{M_2 \in {\cal S}} = \vec{\Omega} \wedge \vec{OM_2}.
+$$
+
+En notant $u_1$ et $u_2$ les valeurs algébriques des vitesses des points $M_1$ et $M_2$ (comptées dans la direction $x$), $\Omega_z$ le taux de rotation, et $d_1,d_2$ les bras de leviers, ces relations conduisent à $u_1 = \Omega_z d_1$ et $u_2 = \Omega_z d_2$, d'où l'on déduit en supprimant l'inconnue $\Omega_z$ :
+\begin{equation}
+\frac{u_1}{d_1} = \frac{u_2}{d_2}.
+\end{equation}
+}
+
+\item 
+\question{ \underline{ En négligeant l'inertie des osselets}, donnez une relation entre les forces $F_1$ et $F_2$  puis entre les pressions $p'_1$ et $p'_2$.}
+
+\answer{
+En notant $\bf{M}$ la matrice d'inertie du solide $\cal S$, le théorème du moment dynamique s'écrit : ${\bf M} \cdot d \vec{\Omega}/dt = \vec{OM_1} \wedge \vec{F_1} + \vec{OM_2} \wedge \vec{F_2}$ avec $\vec{F_1} = p_1 S_1 \vec{e_x}$ et $\vec{F_2} = -p_2 S_2 \vec{e_x}$ les forces exercées sur chacune des surfaces.
+Si l'on néglige l'inertie, l'équilibre des moments conduit donc à :
+
+\begin{equation}
+d_1 S_1 p_1  = d_2 S_2 p_2.
+\end{equation}
+}
+
+
+
+\item 
+\question{Reprendre l'étude de la partie précédente, et donnez une expression du coefficient 
+de transmission.
+
+Comparez avec les résultats des questions 10 et 11.
+
+
+Pour en savoir plus :
+\verb| http://www.cochlea.eu/oreille-generalites/oreille-moyenne |
+
+}
+
+\answer{
+On reprend donc l'étude de la partie précédente en remplaçant $u_1$ par $u'(0_-,t)$, $u_2$ par $u'(0_+,t)$, $p_1$ par $p'(0_-,t)$ et $p_2$ par $p'(0_+,t)$. On considère deux nouveau une onde incidente $A$, une onde réfléchie $B$ et une onde transmise $C$. 
+On aboutit à un sytème de deux inconnues :  
+
+\begin{equation}
+ \left\{ 
+ \begin{array}{lcr}  \displaystyle \frac{1}{\rho_1 c_1 d_1} (A-B) &=&\displaystyle  \frac{1}{\rho_2 c_2 d_2} C,\\
+ \displaystyle d_1 S_1 (A+B)&=& \displaystyle  d_2 S_2 C
+ \end{array}
+\right. 
+\label{eq:ABCeqs}
+\end{equation}
+La résolution conduit à :
+$$
+t = \frac{C}{A} = \frac{2 S_1 \rho_2 c_2 d_1 d_2}{ \rho_1 c_1 S_1 d_1^2 + \rho_2 c_2 S_2 d_2^2 } 
+$$
+
+Pour en déduire le coefficient de transmission en énergie, il faut prendre garde au fait que le flux d'énergie $\cal P$ (puissance acoustique, en $W$)  est égal à l'intensité acoustique 
+$\overline{I}_x$ (puissance acoustique surfacique en $W/m^2$) multiplié par la section des conduits correspondants. Ce qui conduit, pour l'onde incidente et l'onde transmise, aux formules suivantes :
+
+$$
+{\cal P}_{A} = S_1 \overline{I}_{x,A} = \frac{S_1}{\rho_1 c_1} |A|^2; \quad
+{\cal P}_{C} = S_2 \overline{I}_{x,C} = \frac{S_2}{\rho_2 c_2} |C|^2.
+$$
+
+On en déduit finalement :
+
+$$
+T = \frac{{\cal P}_{C}}{{\cal P}_{A}} =
+\frac{ 4\rho_1 c_1 S_1 d_1^2 \rho_2 c_2 S_2 d_2^2 }{(\rho_1 c_1 S_1 d_1^2 + \rho_2 c_2 S_2 d_2^2 )^2} 
+$$
+
+L'application numérique donne alors $T = 0.0368$, soit $T_{dB} = -14.3 dB$.
+Par rapport à la transmission directe (partie 2) la chaîne d'osselets permet donc de gagner environ $15 dB$ !
+}
+  
+\end{enumerate}
+
+
+
+ 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

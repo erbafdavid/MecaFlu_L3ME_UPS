@@ -1,0 +1,338 @@
+\documentclass{article}
+
+\usepackage{epsfig}
+
+\topmargin -2.5cm
+\oddsidemargin -1.5cm
+\evensidemargin -1.5cm
+\textwidth 18cm
+\textheight 28cm
+
+\pagestyle{empty}
+
+\newcommand{\boxon}[2]{\begin{minipage}{#1}\begin{center} #2 \end{center}\end{minipage}}
+\newcommand{\dpdt}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\dpdx}[1]{\frac{\partial #1}{\partial x}}
+\newcommand{\dpdy}[1]{\frac{\partial #1}{\partial y}}
+\newcommand{\dpdz}[1]{\frac{\partial #1}{\partial z}}
+\newcommand{\ddt}[1]{\frac{d #1}{dt}}
+\newcommand{\ddx}[1]{\frac{d #1}{dx}}
+\newcommand{\ddy}[1]{\frac{d #1}{dy}}
+\newcommand{\divergence}[1]{\, \mbox{div}\left ( #1 \right )}
+\newcommand{\gradient}[1]{\vec{\mbox{grad}}\left ( #1 \right )}
+\newcommand{\tensor}[1]{\stackrel{\Rightarrow}{#1}}
+\newcommand{\eqbox}[1]{\begin{array}{|c|}\hline\\ \displaystyle #1 \\ \\ \hline\end{array}}
+\newcommand{\frimage}[1]{\begin{tabular}{c}\\ \input{#1}\\ \end{tabular}}
+
+
+\begin{document}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{4}{|c|}{}
+\\
+\multicolumn{4}{|c|}{
+\begin{minipage}{17cm}
+\begin{center}
+\textbf{\large 
+(Quelques) solutions exactes des \'equations de Navier-Stokes}
+\end{center}
+\end{minipage}}
+\\
+\multicolumn{4}{|c|}{}
+\\
+\hline \hline
+Sch\'ema & Hypoth\`eses & Solution & Nom de l'\'ecoulement
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{couette-plan.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdt{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{\vec{u}} = \dpdz{\vec{u}} = \vec{0}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\vec{u} = u(y) \, \vec{e}_x 
+\quad
+\mbox{avec} \quad
+u(y) = \frac{Uy}{h}
+\]
+\[
+p = C^{te}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Couette plan 
+\\
+sans gradient de pression 
+\\
+($\partial p / \partial x = 0$)
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{poiseuille-plan.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdt{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{\vec{u}} = \dpdz{\vec{u}} = \vec{0}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\frac{dp}{dx} = C^{te}
+\quad
+\mbox{et} \quad
+\vec{u} = u(y) \, \vec{e}_x 
+\]
+\[
+\mbox{avec} \quad
+u(y) = \frac{1}{2\mu} \frac{dp}{dx} y (h-y)
+\]
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Poiseuille plan
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{couette-poiseuille.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdt{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{\vec{u}} = \dpdz{\vec{u}} = \vec{0}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\frac{dp}{dx} = C^{te}
+\quad
+\mbox{et} \quad
+\vec{u} = u(y) \, \vec{e}_x 
+\]
+\[ \mbox{avec} \quad
+u(y) = U \left[ 
+\frac{y}{h} -  K \frac{y}{h} \left ( 1 - \frac{y}{h} \right ) \right ]
+\] 
+\[
+\mbox{o\`u}  \quad K =\frac{h^2}{2\mu U} \ddx{p}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Couette plan 
+\\
+avec gradient de pression 
+\\
+($\partial p / \partial x \neq 0$)
+\\
+= ``Couette-Poiseuille''
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{poiseuille-cylindrique.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdt{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{\vec{u}} = \frac{\partial \vec{u}}{\partial \theta} = \vec{0}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\ddx{p} = C^{te}
+\quad
+\mbox{et} \quad
+\vec{u} = u(r) \, \vec{e}_x 
+\]
+\[ \mbox{avec} \quad
+u(r) = - \frac{1}{4 \mu} \ddx{p} \left ( R^2 - r^2\right )
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Poiseuille cylindrique
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{couette-taylor.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdt{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{\vec{u}} = \frac{\partial \vec{u}}{\partial \theta} = \vec{0}
+\]
+\[
+\dpdx{p} = 0
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\vec{u} = v(r) \vec{e}_\theta \quad \mbox{avec} \quad
+v(r) = A r + \frac{B}{r}
+\]
+\[
+\mbox{o\`u} \quad
+A = \frac{\Omega_2 R_2^2 - \Omega_1 R_1^2}{R_2^2 - R_1^2}
+\]
+\[
+\mbox{et} \quad
+B = \frac{\left(\Omega_2 - \Omega_1\right) R_1^2 R_2^2}{R_2^2 - R_1^2}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Couette cylindrique \\ = ``Couette-Taylor''
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{film-tombant.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdt{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{\vec{u}} = \dpdz{\vec{u}} = \vec{0}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\vec{u} = u(y) \vec{e}_x
+\]
+\[
+\mbox{avec} \quad
+u(y) = \frac{g \sin\alpha}{2 \nu} y (2h - y)
+\]
+\[
+p(y) = \rho g (h-y) \cos \alpha + P_a
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Film tombant
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{stokes-1.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdx{\vec{u}} = \dpdz{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{p} = 0
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\vec{u} = u(y, t) \vec{e}_x
+\]
+\[
+\mbox{avec} \quad
+u(y, t) = U 
+\left [ 1 - \mbox{erf}\left( \frac{y}{2\sqrt{\nu \, t}} \right) \right]
+\]
+\[
+p = C^{te}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Premier probl\`eme \\ de Stokes
+\end{minipage}
+\\
+\hline \hline
+\begin{minipage}[c]{4.5cm}
+\frimage{stokes-2.pstex_t}
+\end{minipage}
+&
+\begin{minipage}[c]{2cm}
+\[
+\dpdx{\vec{u}} = \dpdz{\vec{u}} = \vec{0}
+\]
+\[
+\dpdx{p} = 0
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{5.5cm}
+\[
+\vec{u} = u(y, t) \vec{e}_x
+\]
+\[
+\mbox{avec} \quad
+u(y, t) = U e^{-y/\delta} \cos( \omega t - \frac{y}{\delta} ) 
+\]
+\[
+\mbox{o\`u} \quad \delta = \sqrt{\frac{2\nu}{\omega}}
+\quad \mbox{et} \quad p = C^{te}
+\]
+\vskip 0.5cm
+\end{minipage}
+&
+\begin{minipage}[c]{4cm}
+Second probl\`eme \\ de Stokes
+\end{minipage}
+\\
+\hline
+\end{tabular}
+
+\end{document}
+
+
+
+
+
+
+
